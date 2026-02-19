@@ -1,56 +1,4 @@
-\section{Emergent Dynamics (The Lattice Update)}
-\label{sec:EmergentDynamics}
-
-The derivations in this work establish the static boundary conditions of the vacuum. This section outlines how these boundaries dictate the dynamic evolution of the system via the \textbf{Conservation of Information Density}.
-
-\subsection{The Cellular Automaton (Deriving the Dirac Operator)}
-Time is treated as a discrete clock cycle defined by the fundamental resonance $\Delta$. The state of a node $\psi(x, t)$ updates based on the flux from its geometric neighbors.
-
-\textbf{Step 1: The Kirchhoff Update Rule} \\
-% todo?  make the python equations appear here rather than manually typeing in.
-
-The Kirchhoff Update Rule is based on the conservation of information flux, analogous to Kirchhoff's Current Law in network theory. This approach is formally equivalent to a Quantum Lattice Gas Automaton (QLGA)\cite{meyer_quantum_1996} or the discrete Feynman Checkerboard model \cite{feynman_quantum_1965}, extended here to the $E_8$ geometry.
-
-The update is the sum of inflows from the chiral lattice vectors $e_k$. Define the discrete evolution as:
-\begin{equation}
-\begin{split}
-    \psi(x, t+\delta t) =& \psi(x, t) \\
-    & - i \mathcal{A} \sum_{k=1}^{3} \left( \psi(x + e_k \delta x, t) - \psi(x - e_k \delta x, t) \right) \\
-    & - i m \psi(x, t) \\
-\end{split}
-\label{eq:KirchhoffUpdateRule}
-\end{equation}
-Where $\mathcal{A}$ is the vacuum admittance (coupling strength) and $m$ is the mass impedance.
-
-\textbf{Step 2: The Continuum Limit} \\
-Rearranging the update rule to form difference quotients:
-\begin{equation}
-\begin{split}
-    \frac{\psi(x, t+\delta t) - \psi(x,t)}{\delta t} = \\
-    -i \mathcal{A} \sum_{k} \frac{\psi(x + e_k \delta x, t) - \psi(x - e_k \delta x, t)}{\delta x} \frac{\delta x}{\delta t} 
-    - i m \psi(x, t)
-\end{split}
-\end{equation}
-
-In the continuum limit ($\delta t, \delta x \to 0$), keeping $c = \delta x / \delta t = 1$, the left side becomes $\partial_t \psi$ and then Taylor expand the right side. Identify the vacuum admittance with the unit coupling ($\mathcal{A} = 1$ in natural units), and separate the temporal and spatial components:
-
-\begin{equation}
-    i\partial_t \psi = i\sum_{k=1}^{3} \gamma^k \partial_k \psi - m\psi
-\end{equation}
-
-Identifying the temporal update vector with the time-like gamma matrix ($\gamma^0$), we obtain the covariant form:
-\begin{equation}
-    (i\gamma^\mu \partial_\mu - m)\psi = 0
-\end{equation}
-
-\textbf{Step 3: The Clifford Identification} \\
-The jump from lattice vectors $e_k$ to Dirac matrices $\gamma^\mu$ requires justification. The key geometric insight is that the $D_4$ lattice basis vectors are not ordinary spatial directions, but \textbf{spinor generators}. Recall from Section I that the spinor representation of $D_4$ requires a 4-dimensional basis satisfying the metric of the projection manifold:
-
-\begin{equation}
-    \{e_\mu, e_\nu\} \equiv e_\mu e_\nu + e_\nu e_\mu = 2g_{\mu\nu}
-\end{equation}
-
-where $g_{\mu\nu} = \text{diag}(-1,+1,+1,+1)$ is the Lorentzian metric derived in Paper I. This anti-commutation relation is precisely the defining property of the Dirac gamma matrices. Thus, the lattice geometry does not merely \textit{map} to the Dirac equation; it structurally \textit{is} the Clifford algebra.
+\section{Emergent Dynamics Audit}
 
 \subsection{Renormalization as Resolution}
 Standard Quantum Field Theory requires renormalization to handle infinite integrals at small scales. In the $E_8$-Persistence framework, the lattice spacing $\ell_P$ provides a natural, physical Ultraviolet Cutoff ($\Lambda_{UV} \sim M_P$).
@@ -60,8 +8,6 @@ The observed ``running" of coupling constants is the result of \textbf{Scale-Dep
     \alpha(Q^2) = \frac{\alpha(0)}{1 - \frac{\beta_0 \alpha(0)}{2\pi} \ln(Q^2/\Lambda^2)}
 \end{equation}
 Here, the beta function coefficient $\beta_0 = 11 - \frac{2}{3}n_f$ is not a quantum loop correction, but the \textbf{Geometric Stiffness} of the lattice, describing how the available channel capacity ($N_{eff}$) scales with resolution. 
-
-\section{Emergent Dynamics Audit}
 
 \textit{Ab initio} simulations of the discrete lattice evolution  under the Kirchhoff Update Rule (\cref{eq:KirchhoffUpdateRule}) validate that the system evolves as expected by the Dirac equation.
 

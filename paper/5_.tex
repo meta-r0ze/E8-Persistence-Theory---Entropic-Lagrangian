@@ -1,0 +1,19 @@
+\section{The Kinetic Constraint: Lorentz Invariance as Channel Capacity}
+\label{sec:kinetic_constraint}
+
+In the companion paper \textit{Informational Energetics}, we established that the substrate is a discrete lattice with a fixed update frequency $\Delta$ and node spacing $\ell$. This creates a hard physical limit on information propagation:
+\begin{equation}
+    c_{eff} \equiv \frac{\ell}{\Delta} = 1
+\end{equation}
+In standard physics, Lorentz Invariance is treated as a geometric axiom. In the Entropic Lagrangian framework, we identify it as the \textbf{Shannon Channel Capacity} ($C_{max}$) of the vacuum. The speed of light is the maximum rate of causality; information can propagate exactly one node spacing per update cycle.
+
+For the Lagrangian $\mathcal{L}_{\Phi}$ to describe a persistent system, it must enforce this capacity limit dynamically. It does so by assigning an infinite Entropic Action cost to any trajectory that attempts to exceed $c_{eff}$. This requirement necessitates the use of the \textbf{Minkowski Metric} ($\eta_{\mu\nu} = \text{diag}(-1, 1, 1, 1)$) in the kinetic terms.
+
+Specifically, the geometric distance $ds^2 = -dt^2 + dx^2$ acts as a \textbf{Causality Filter}:
+\begin{itemize}
+    \item \textbf{Timelike ($ds^2 < 0$):} The signal is within bandwidth ($v < c$). The action is real and finite. Persistence is possible.
+    \item \textbf{Lightlike ($ds^2 = 0$):} The signal is at the bandwidth limit ($v = c$). This defines the propagation of massless carriers (The Protocol).
+    \item \textbf{Spacelike ($ds^2 > 0$):} The signal exceeds bandwidth ($v > c$). This results in causal aliasing.
+\end{itemize}
+
+Therefore, the kinetic terms of the Standard Model (e.g., $\partial_\mu \phi \partial^\mu \phi$) are not merely defining motion; they are the \textbf{Penalty Functions} applied by the Governor pillar to suppress causal violations.
