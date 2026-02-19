@@ -1,8 +1,10 @@
 \section{Derivation B: Gauge Field Synchronization (The Protocol)}
 
-Having derived the propagator for the node state (Map), we must now derive the dynamics of the links connecting them. In the Universal Architecture, the \textbf{Protocol} pillar requires the system to maintain coherence across spatially separated nodes.
+Having derived the Node Update Rule (Dirac) based on conservation of information flux, we must now address the \textbf{Link Update Rule}. In the Kirchhoff formalism, the transfer of amplitude between nodes $x$ and $x+\mu$ assumes a shared phase reference. However, the lattice is discrete; nodes are locally autonomous.
 
-In a discrete lattice, this manifests as the requirement for \textbf{Local Phase Invariance}. If the internal phase of a node rotates, the information flow to its neighbors must rotate compensatorily to preserve the signal. The "Gauge Field" emerges not as a fundamental entity, but as the \textbf{Correction Signal} required to keep the lattice synchronized.
+The \textbf{Protocol} pillar requires that the flux conservation law remains invariant even if the local phase frame of a node rotates. To enforce the Unitary Flux Constraint (Eq. \ref{eq:LatticeUpdateRule}) across a spatial separation, the lattice must institute a \textbf{Connection Coefficient} $U_\mu(x)$—a "wire" that rotates the phase of the flux to match the receiver.
+
+The Gauge Field $A_\mu$ is simply the phase-twist of this wire. The Yang-Mills action emerges as the penalty for wiring errors (non-integrable phase loops).
 
 \subsection{The Comparator: Parallel Transport}
 Let $\psi(x)$ be the state at node $x$. To compare it with a neighbor $\psi(x+\mu)$, the system must transport the state across the link. We define the \textbf{Link Variable} $U_\mu(x)$ as the geometric operator that aligns the phase frames of adjacent nodes:
