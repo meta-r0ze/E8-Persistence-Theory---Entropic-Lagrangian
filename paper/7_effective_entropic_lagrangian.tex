@@ -69,3 +69,24 @@ Minimizing the dissipation functional $\Phi_{drag} = \mathbf{K} \cdot \lambda_{f
 Standard QFT requires renormalization because it assumes the vacuum is a continuum with infinite capacity. The Entropic Lattice has a hard physical limit: the node capacity $\nu=16$.
 
 We identify the "Cutoff Scale" $\Lambda_{UV}$ not as a mathematical trick, but as the \textbf{Shannon Channel Capacity} of the geometry. When the energy density $\mathbf{K}$ approaches the node capacity $C_{node}$, the entropic cost diverges asymptotically. This enforces a natural, physical UV completion at the Planck scale without requiring manual regularization.
+
+
+\begin{table*}[h]
+\centering
+\caption{\textbf{System III: The Entropic Dynamics (The Lagrangian).} The Standard Model as the unique minimization of Entropic Action ($S_\Phi$) on the lattice substrate.}
+\label{tab:system_lagrangian}
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{} l l c l @{}}
+\hline
+\textbf{IE Pillar} & \textbf{Lagrangian Term} & \textbf{Symbol} & \textbf{Physical Meaning} \\
+\hline
+Capacity & Mass Term & $m\bar{\psi}\psi$ & Knot geometric impedance \\
+Identity (MAP) & Dirac Operator & $\bar{\psi}i\gamma D\psi$ & Spinor propagation \\
+Protocol & Gauge Kinetic & $-\frac{1}{4}F^2$ & Gauge synchronization cost \\
+Governor & Scalar Potential & $|D\phi|^2 - V(\phi)$ & Stability constraint ($\chi=2$) \\
+Temporal (TOL) & Einstein-Hilbert & $\frac{M_P^2}{2}R$ & Metric update cost \\
+Margin & Cosmological Term & $M_P^2\Lambda$ & Vacuum resolution floor \\
+\hline
+\end{tabular}
+\end{table*}

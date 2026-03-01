@@ -4,12 +4,12 @@
 
 Finally, we must derive the mechanism that stabilizes the lattice geometry itself. In the Universal Architecture, the \textbf{Governor} pillar is required to prevent the system from diverging (Causal Disconnect) or collapsing (Singularity).
 
-In a lattice gauge theory, the link variables ($U_\mu$) define the angles between nodes, but they do not define the \textit{scale} or "stiffness" of the node itself. We introduce a complex scalar field $\phi(x)$ representing the \textbf{Active Occupancy} of the lattice site $x$.
+In a lattice gauge theory, the link variables ($U_\mu$) define the angles between nodes, but they do not define the \textit{scale} or ``stiffness'' of the node itself. We introduce a complex scalar field $\phi(x)$ representing the \textbf{Active Occupancy} of the lattice site $x$.
 
 The Entropic Action for this sector is derived from two competing information-theoretic imperatives: the need to maintain causal contact (Kinetic) and the need to remain within finite capacity limits (Potential).
 
 \subsection{The Kinetic Governor: Covariant Consistency}
-Changes in the lattice occupancy ($\partial_\mu \phi$) cannot occur independently of the Protocol (the gauge field). If the "volume" of a node changes, it alters the phase relationship with its neighbors. To maintain Unitarity, the scalar derivative must be corrected by the connection $A_\mu$.
+Changes in the lattice occupancy ($\partial_\mu \phi$) cannot occur independently of the Protocol (the gauge field). If the ``volume'' of a node changes, it alters the phase relationship with its neighbors. To maintain Unitarity, the scalar derivative must be corrected by the connection $A_\mu$.
 
 We replace the partial derivative with the Covariant Derivative, $D_\mu = \partial_\mu - igA_\mu$. The entropic cost of changing the local lattice scale is the square of this gradient:
 \begin{equation}
@@ -45,4 +45,4 @@ Summing these constraints yields the canonical Higgs Potential:
 \begin{equation}
     V(\phi) = -\mu^2|\phi|^2 + \lambda_H|\phi|^4
 \end{equation}
-\textbf{Conclusion:} The "Mexican Hat" potential is not an ad hoc choice. It is the unique solution to a \textbf{Finite Capacity Control Problem}. The system must be driven away from silence ($-\mu^2$) but restrained from infinite noise ($+\lambda_H$). The Vacuum Expectation Value (VEV) $v = \sqrt{\mu^2/\lambda_H}$ is simply the equilibrium point where the vacuum pressure balances against the bit-depth limit.
+\textbf{Conclusion:} The ``Mexican Hat'' potential is not an ad hoc choice. It is the unique solution to a \textbf{Finite Capacity Control Problem}. The system must be driven away from silence ($-\mu^2$) but restrained from infinite noise ($+\lambda_H$). The Vacuum Expectation Value (VEV) $v = \sqrt{\mu^2/\lambda_H}$ is simply the equilibrium point where the vacuum pressure balances against the bit-depth limit.

@@ -16,6 +16,12 @@
 }
 \sisetup{separate-uncertainty=true, multi-part-units=single}
 \usepackage{graphicx}
+\graphicspath{{calculations/}}
+
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{calculations/}} % Add your folder here
+\makeatother
  
 \makeatletter
 \let\l@de\l@ngerman
@@ -45,29 +51,30 @@
 
 \date{\today}
 
-\input{paper/0_abstract}
+\input{0_abstract}
 
 \maketitle % Generates the title block
 
 % Main Content
-\input{paper/1_introduction}
-\input{paper/2_action}
-\input{paper/3_dirac}
-\input{paper/4_guage_field}
-\input{paper/5_higgs}
-\input{paper/6_spactime}
+\input{1_introduction}
+\input{2_action}
+\input{3_dirac}
+\input{4_spin}
+\input{4_guage_field}
+\input{5_higgs}
+\input{6_spactime}
 
-\input{paper/7_effective_entropic_lagrangian}
+\input{7_effective_entropic_lagrangian}
 
-\input{paper/8_audit}
-\input{paper/8_sim}
+\input{8_audit}
+\input{8_sim}
 
-\input{paper/9_falsifiability}
-\input{paper/10_conclusion}
-
-\appendix
+\input{9_falsifiability}
+\input{10_conclusion}
 
 % Bibliography
-\bibliography{paper/references}
+\bibliography{references}
+
+\appendix
 
 \end{document}
