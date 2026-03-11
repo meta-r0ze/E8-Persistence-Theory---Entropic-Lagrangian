@@ -1,0 +1,29 @@
+Please review and classify every issue you find into these categorie(s), and lead with the category label:
+FATAL-IDEA (Map failure): The core logic or mathematics is wrong in a way that undermines the paper's central claims. Would cause rejection regardless of presentation.
+SHARE (gov failure): Should be fixed before widely sharing as an idea.  Most will interpret the spirit of what is written, but the text needs to be more exact to prevent inaccurate readings.
+CRITICAL-PUBLISH (protocol failure): Does not affect the core logic but would likely cause rejection by a referee or editor. Must be fixed before submission.
+IMPROVE (Mar optimization): Makes the paper clearer or stronger but is not blocking. Worth fixing if the work is not burdensome.
+REMOVE-SIMPLIFY (cap/tol optimization): Anything that is over verbose and can be simplified or should be removed.
+POLISH (substrate alignment): Stylistic, LaTeX, or presentational. Fix if convenient, ignore if not.
+For each issue, also estimate: (a) does fixing it change the math or logic, (b) does fixing it change the narrative or tone, (c) is it visible to a casual reader vs. only a specialist referee.
+SCOPE-DEFENSE: (cap failure) articulate just enough for this paper.  Never introduce a generalized concept without immediately bounding its application in the current text. If you mention a broader implication, you must instantly tell the referee, "I am only using X to solve Y in this paper; the general case of X is the subject of a companion paper.  Are my forward-references clearly labeled as 'future work' versus 'derived later in this text'?
+PARAMETER-FREE CHECK: (Toll optimization): derivations contain strictly zero free parameters and rely only on discrete geometric counting/invariants. Explicitly flag any step where a continuous tunable parameter, an arbitrary scaling factor, or an unstated physical assumption sneaks into the math.
+CONSISTENCY-CHECK: Consistency pass on scope claims. Make sure every paragraph is clear about whether it's deriving functional forms (this paper) or specific values/groups (next paper).
+NAME-CHECK: Informational Energetics or IE refers to the general framework around systems that can persist.  $E_8$-Persistence theory is the name of the physics theory that applies this to find an E8 lattice substrate
+PHYSICS-CONVERSION: Assume the reader knows the standard QFT math, but assume they have no idea why the math takes that specific form. Begin every derivation with the architectural necessity (the IE Pillar), translate that into a strict structural constraint on the lattice, and then show that the standard QFT operator is the unique mathematical result. Never explain a standard QFT equation; instead, explain why the IE framework forces that equation to exist. Provide brief parenthetical reminders for IE concepts from Paper 1 (like the Governor or Margin) to keep the text self-contained on only the first use in this paper.
+
+Respect that the reader is an adult who can evaluate a bold claim on its merits and don’t bikeshed or goalpost shift. Every paper has wording that is debatable the best way to present it and can bounce between two different prose depending on the reviewer. Does an issue actually identify something the paper gets wrong?
+
+If you find no FATAL-IDEA issues, say so explicitly at the top of your review.  Would a complex systems scientist want to read this in its current form? Would a physicist want to read this in its current form?  
+
+Details about the paper. 
+- The abstract should answer 'what', the introduction should answer 'why', the conclusion should say 'what changed', What do they now know that they didn't before and what comes next? 
+- This paper builds upon the first IE paper which introduced the pillars, this does the action
+- The Entropic action is stand alone (in the sense that it applies to all systems), the physics application is an example, the Entropic action section thus should refrain from discussing the later physics application or the e8 lattice etc
+- The purpose of this paper is introduce the entropic Action that applies to any system.  It provides an example of it by proving that the Standard Model Lagrangian and General Relativity are not axiomatic laws of nature, but the unique, unavoidable thermodynamic cost functions of operating the E8 substrate derived in paper 1.
+- There is a cascade Entropic action => Mapping to the lagrangian => filling in the values => validation.
+- While there are companion papers in the works this paper should be as stand alone as possible.
+- This is not published yet and we can change anything, a name, the layout, the example, literally anything to make the paper better.
+- While good, lets avoid the Operating System metaphore if possible
+
+For anything you find also suggest latex fixes that can be inserted/edited into the paper as well as if multiple places need to be fixed to fully resolve the issue.
