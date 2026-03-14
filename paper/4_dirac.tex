@@ -3,8 +3,8 @@
 
 \textbf{The Architectural Goal:} 
 \begin{itemize}
-    \item \textbf{Map ($\bar{\psi} i \gamma^\mu D_\mu \psi$):} \textit{The Cost of Propagation.} The Dirac operator is the logic of state evolution. The spinor structure ($\gamma^\mu$) is the algebraic requirement for a complex signal to propagate on the chiral $D_4$ substrate.
-    \item \textbf{Capacity ($-m\bar{\psi}\psi$):} \textit{The Cost of Existence.} The mass term is the impedance required to lock a persistent state into a stable history against the vacuum flux. It represents the phase-locked memory of the lattice.
+    \item \textbf{Map ($\bar{\psi} i \gamma^\mu D_\mu \psi$):} \textit{The Cost of Propagation.} The Dirac operator is the logic of state evolution. The spinor structure ($\gamma^\mu$) is the algebraic penalty function ensuring a complex signal propagates losslessly on the chiral $D_4$ substrate without violating the unitary flux constraint.
+    \item \textbf{Capacity ($-m\bar{\psi}\psi$):} \textit{The Cost of Existence.} The mass term is the impedance required to lock a persistent state into a stable history against the vacuum flux. It acts as the penalty preventing a localized topological defect from dissipating at the speed of light into the vacuum flux.
 \end{itemize}
 
 \textbf{Terminology Mapping:} Throughout this text, we standardize the terminology bridging geometry and physics. A localized, persistent boundary structure on the substrate is a \textbf{Topological Defect}. When this defect occupies the chiral node channels ($\nu=16$), its physical manifestation is a \textbf{Fermion}. 
@@ -12,7 +12,7 @@
 We first derive the dynamics of the \textbf{Map} pillar by defining the evolution of a fermion state $\psi(x,t)$ on the lattice. Time is treated not as a continuous dimension, but as a discrete clock cycle defined by the fundamental temporal step $\tau$.
 
 \subsection{The Unitary Flux Constraint}
-The evolution of the state is governed by the conservation of probability amplitude (Unitarity). We define the update rule based on the \textbf{Quantum Lattice Gas Automaton (QLGA)} formalism \cite{meyer_quantum_1996}. The QLGA is the uniquely appropriate discretization scheme for this substrate because it explicitly enforces the three core requirements derived for the vacuum in System 0: locality (nearest-neighbor transitions), unitarity (probability conservation at each discrete step), and finiteness (a strictly bounded state space per node). It generalizes the Feynman Checkerboard model \cite{feynman_quantum_1965} to the $D_4$ geometry.
+The evolution of the state is governed by the conservation of probability amplitude (Unitarity). The uniquely appropriate discretization scheme to enforce the three core architectural requirements derived for the vacuum: locality (nearest-neighbor transitions), unitarity (probability conservation at each discrete step), and finiteness (a strictly bounded state space per node) is structurally equivalent to the \textbf{Quantum Lattice Gas Automaton (QLGA)} formalism \cite{meyer_quantum_1996}, generalizing the Feynman Checkerboard model\cite{feynman_quantum_1965} to the $D_4$ geometry.
 
 The state at a node $\psi(x, t+\tau)$ is the superposition of its previous state and the information flux received from its chiral neighbors. This is the \textbf{Kirchhoff Condition for Information}: the net flux into a node determines the rate of change of the state amplitude.
 
@@ -23,7 +23,7 @@ We define the discrete evolution operator as:
     &- im\psi(x, t)
 \label{eq:unitary_flux}
 \end{align}
-Where:
+where:
 \begin{itemize}
     \item $e_k$ are the spatial lattice basis vectors.
     \item $\ell$ is the spatial node spacing.
@@ -33,7 +33,11 @@ Where:
 \end{itemize}
 
 \subsection{The Continuum Limit}
-To recover the field equation, we rearrange the update rule into difference quotients. We take the limit where the lattice spacing $\ell$ and time step $\tau$ approach zero. Introducing the required factor of 2 for the central difference span, we pull out the causal bandwidth ratio $\ell / \tau$:
+To recover the macroscopic field equation, we map the discrete update rule to its continuous Effective Field Theory (EFT) approximation. We rearrange the update rule into difference quotients and take the continuum limit ($\lambda \gg \ell$). 
+
+\textbf{The Ontological Reversal:} Crucially, the lattice spacing $\ell$ and time step $\tau$ do not physically vanish. They represent the finite, immutable Planck-scale resolution of the substrate. Unlike standard QFT where the continuous manifold is assumed fundamental and the discrete lattice is merely a mathematical regularization trick, Informational Energetics reverses this hierarchy: the discrete substrate is the exact physical reality, and the continuous manifold is strictly a macroscopic approximation. 
+
+By factoring out the strict causal bandwidth limit ($c \equiv \ell/\tau = 1$), we obtain:
 
 \begin{equation}
 \begin{split}
@@ -43,24 +47,21 @@ To recover the field equation, we rearrange the update rule into difference quot
     \end{split}
 \end{equation}
 
-In the continuum limit, we enforce the kinematic capacity constraint $c \equiv \ell / \tau = 1$ and absorb the normalized geometric admittance ($2gc \to 1$). Crucially, $g$ is not a tunable coupling parameter as treated in standard effective field theories. It is the intrinsic geometric transmission efficiency of the lattice, strictly forced to $g = 1/2c$ by the requirement of lossless unitary propagation at the causal bandwidth limit. This is the first instance of the framework's overarching geometric constraint: the substrate leaves no continuous free parameters. 
+In the continuum limit, we enforce the kinematic capacity constraint $c \equiv \ell/\tau = 1$. Crucially, the geometric admittance $g$ is not a tunable coupling parameter as treated in standard effective field theories. The requirement of lossless unitary propagation at the causal bandwidth limit strictly forces the constraint $2g/c = 1$ (fixing $g=1/2$). This is the first instance of the theory's overarching geometric constraint: the substrate leaves no continuous free parameters to absorb normalizations.
 
 Recognizing the central difference quotient as the spatial derivative $\partial_k$ and the left-hand side as the temporal derivative $\partial_t$:
-
 \begin{equation}
-    \partial_t \psi = -i \sum_{k=1}^{3} \Gamma^k \partial_k \psi - i m \psi
+    \partial_t \psi = - \sum_{k=1}^{3} \Gamma^k \partial_k \psi - i \gamma^0 m \psi
 \end{equation}
-
-Multiplying by $i$ to match standard quantum mechanical notation yields the Hamiltonian form:
+where the spatial lattice vectors map to the matrices $\Gamma^k$, and the scalar mass impedance acts through the temporal projection matrix $\gamma^0$. Multiplying by $i$ to match standard quantum mechanical notation yields the Hamiltonian form:
 \begin{equation}
-    i \partial_t \psi = \sum_{k=1}^{3} \Gamma^k \partial_k \psi + m \psi
+    i \partial_t \psi = -i \sum_{k=1}^{3} \Gamma^k \partial_k \psi + \gamma^0 m \psi
 \end{equation}
-Here, $\Gamma^k$ represents the projection of the lattice vectors onto the propagation manifold.
 
 \subsection{The Clifford Identification}
-The critical step in identifying this lattice rule with the Dirac equation is the geometric nature of the propagation matrices $\Gamma^k$. In the $E_8 \to D_4 \oplus D_4$ projection, the lattice basis vectors are not simple coordinate directions; they are \textbf{Spinor Generators}.
+The critical step in identifying this lattice rule with the Dirac equation is the geometric nature of the propagation matrices $\Gamma^k$. Standard scalar cellular automata do not generate anti-commuting basis vectors. However, as established by the \textbf{Map} pillar, the local node state is not a scalar; it requires a complex, chiral bit-depth ($\nu=16$) to encode phase and distinguish input from output. 
 
-For the propagator to be consistent on the projection manifold, the full set of spacetime basis vectors $e_\mu = (e_0, e_k)$ must satisfy the metric of that manifold. The anti-commutation relation for the $D_4$ causal lattice basis is:
+Consequently, the basis vectors mediating transitions between these nodes cannot be simple coordinate directions; they must be the geometric generators of the local Spin group (\textbf{Spinor Generators}). In the $E_8 \to D_4 \oplus D_4$ projection, the full set of spacetime basis vectors $e_\mu = (e_0, e_k)$ must satisfy the metric of the causal manifold. The anti-commutation relation for the $D_4$ causal lattice basis is:
 \begin{equation}
     \{e_\mu, e_\nu\} \equiv e_\mu e_\nu + e_\nu e_\mu = 2\eta_{\mu\nu} \mathbb{I}
 \end{equation}
@@ -71,18 +72,17 @@ This relation is precisely the defining algebra of the Dirac gamma matrices ($\g
     (e_0, e_1, e_2, e_3) \equiv (\gamma^0, \gamma^1, \gamma^2, \gamma^3)
 \end{equation}
 
-To recover the covariant Dirac equation from the Hamiltonian form, we recognize that the spatial QLGA matrices correspond to the Dirac $\alpha$ matrices ($\Gamma^k = \gamma^0 \gamma^k$), and the mass impedance structure aligns with the $\beta$ matrix ($\gamma^0$). Multiplying the entire continuum equation by the temporal vector $\gamma^0$ perfectly recovers the covariant Dirac equation:
+To recover the covariant Dirac equation from the Hamiltonian form, we recognize that the spatial QLGA matrices correspond to the Dirac $\alpha$ matrices ($\Gamma^k = \alpha^k = \gamma^0 \gamma^k$), while the mass impedance already carries the temporal matrix $\gamma^0$. Multiplying the entire continuum equation by $\gamma^0$ (and utilizing the Lorentzian metric property $(\gamma^0)^2 = -1$) perfectly recovers the covariant Dirac equation:
 \begin{equation}
     (i\gamma^\mu \partial_\mu - m)\psi = 0
 \end{equation}
 
 \subsection{The Chiral Filter: Geometric Parity Violation}
-Standard QFT introduces the chiral projection operator $P_L = \frac{1-\gamma^5}{2}$ as an empirical constraint to match the observed weak interaction. In the \textit{$E_8$-Persistence} framework, this is a geometric necessity of the projection.
+Standard QFT introduces the chiral projection operator $P_L = \frac{1-\gamma^5}{2}$ as an empirical constraint to match the observed weak interaction. In the \textit{$E_8$-Persistence} theory, this is a geometric necessity of the projection.
 
 The decomposition $E_8 \to D_4 \oplus D_4$ splits the 16-component lattice state into two orthogonal sectors. Crucially, the causal metric signature $(-1, +1, +1, +1)$ required for the \textbf{Toll} pillar (Time) can only be assigned to one $D_4$ sector (Spacetime). The orthogonal $D_4$ sector (Internal Symmetry) remains Euclidean $(+1, +1, +1, +1)$.
 
-Dynamics requires a time derivative ($\partial_t$). States residing in the Euclidean sector possess no temporal generator; they are geometrically static ($\partial_t \psi_{mirror} \equiv 0$) relative to the causal manifold. Consequently, the ``Right-Handed'' (Mirror) components of the $E_8$ spinor are structurally filtered out of the propagation dynamics.
-The Dirac propagator on the projected manifold acts only on the active sub-algebra, enforcing maximum parity violation ($P_L$) not by suppression, but by the topological absence of a temporal update path for the mirror sector.
+Dynamics requires a time derivative ($\partial_t$). States residing entirely in the Euclidean sector possess no temporal generator; they are geometrically static ($\partial_t \psi_{mirror} \equiv 0$) relative to the causal manifold. Consequently, the hypothetical ``Mirror Fermions'' (which would symmetrically couple right-handed states to the weak interaction) are structurally filtered out of the propagation dynamics. The Dirac propagator on the projected manifold acts only on the active sub-algebra, enforcing maximum parity violation ($P_L$) for the gauge interaction. This is not imposed by arbitrary suppression; it follows strictly from the topological absence of a temporal update path for the mirror sector.
 
 \subsection{The Capacity Mechanism: Mass as Chiral Impedance}
 
@@ -90,11 +90,12 @@ If the vacuum only possessed the Map pillar, the resulting massless Dirac equati
 
 \textbf{Geometric Necessity of the Scalar Bridge:} To satisfy Capacity, the node must retain state over time. In the lattice formalism, maintaining a local address requires creating a resonant geometric loop: converting an outgoing flux vector (Left-Chiral) into an incoming flux vector (Right-Chiral), effectively bouncing the signal back and forth to arrest its spatial translation (a geometric ``Zitterbewegung'').
 
-However, as established by the Chiral Filter, the Left and Right chiral sectors reside in strictly orthogonal $D_4$ projections. Consequently, they cannot couple directly. A bare mass term ($-m\bar{\psi}\psi = -m(\bar{\psi}_L\psi_R + \bar{\psi}_R\psi_L)$) represents a direct transition between orthogonal spaces, which is geometrically forbidden. This structural prohibition recovers the chiral gauge invariance of the Standard Model not as an abstract gauge symmetry, but as a rigid geometric absolute.
+However, in the $E_8 \to D_4 \oplus D_4$ projection, the active spacetime kinematics (where chiral propagation occurs) and the internal gauge symmetry (where quantum numbers like weak isospin are defined) reside in strictly orthogonal sub-lattices. A bare mass term ($-m\bar{\psi}\psi = -m(\bar{\psi}_L\psi_R + \bar{\psi}_R\psi_L)$) represents a direct, rigid coupling between the chiral spacetime representations and the internal gauge representations, which is geometrically forbidden without a mediating link. This structural prohibition recovers the chiral gauge invariance of the Standard Model not as an abstract symmetry, but as a rigid geometric absolute.
 
-\textbf{The Yukawa Operator:} To arrest information flow and satisfy Capacity without violating this geometric isolation, the lattice must introduce a mediating scalar variable—the \textbf{Governor} field ($\phi$), the architectural mechanism preventing unbounded divergence \cite{meyer_informational_2026}—to transfer momentum and phase between the orthogonal sectors. The Capacity constraint therefore uniquely mandates the Yukawa Coupling:
+\textbf{The Yukawa Operator:} To arrest information flow and satisfy Capacity without violating this geometric isolation, the lattice must introduce a mediating scalar variable---the \textbf{Governor} field ($\phi$)---to transfer momentum and quantum numbers between the orthogonal sectors. The Capacity constraint therefore uniquely mandates that the bare $\mathcal{L}_{CAP}$ term must take the form of a Yukawa Coupling:
 \begin{equation}
-    \mathcal{L}_{Cap} \propto y \left( \bar{\psi}_L \phi \psi_R + \bar{\psi}_R \phi^\dagger \psi_L \right)
+    \mathcal{L}_{CAP} = -y \left( \bar{\psi}_L \phi \psi_R + \bar{\psi}_R \phi^\dagger \psi_L \right)
 \end{equation}
+In Quiescent Equilibrium, where the Governor field settles to a constant non-zero background expectation value ($\langle\phi\rangle$), this dynamic bridging operator reduces exactly to the effective mass impedance term presented in the Entropic Balance Sheet: $\mathcal{L}_{CAP} \to -m\bar{\psi}\psi$, where $m = y\langle\phi\rangle$.
 
 \textbf{Conclusion: The Physical Nature of Mass.} This derivation reframes the physical nature of mass. The Dirac equation is not an axiom, nor are its chiral gauge restrictions arbitrary; it is the hydrodynamic limit of a discrete, unitary cellular automaton evolving on a spinor lattice. The ``matrices'' of the Standard Model are simply the basis vectors of the underlying geometry. Crucially, fermion mass is not an intrinsic, fundamental property of a particle. It is the geometric impedance ($m = y\langle\phi\rangle$) generated by the scalar boundary field—the necessary thermodynamic drag required to arrest a state from dissipating at the speed of light, locking a topological defect into a persistent local capacity.

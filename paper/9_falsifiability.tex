@@ -1,29 +1,25 @@
 \section{Falsifiability: Structural Kill-Switches}
 \label{sec:falsifiability}
 
-Unlike Effective Field Theories, which can accommodate new particles by adding Lagrangian terms, the Entropic Lagrangian is structurally closed. The integers $\mathbb{S} = \{\Delta, \nu, \sigma, \chi\}$ completely saturate the degrees of freedom. Therefore, the theory presents specific ``Hard Constraints'' that serve as immediate falsification criteria:
+Unlike Effective Field Theories, which can accommodate new phenomena by adding arbitrary higher-dimensional operators and continuous tuning parameters, the Entropic Lagrangian is structurally closed. The Characteristic Integers $\mathbb{S} = \{\Delta, \nu, \sigma, \chi\}$ completely saturate the geometry's degrees of freedom. Therefore, the theory presents specific ``Hard Constraints'' that serve as immediate falsification criteria. 
 
-\begin{enumerate}
-    \item \textbf{The Spin-2 Limit (No Supergravity):} The lattice projection capacity ($D=4$) strictly prohibits fundamental fields with spin $>2$. The discovery of a spin-3/2 gravitino or higher-spin gauge field would refute the manifold projection constraint.
-    
-    \item \textbf{The Perturbative Gravity Prohibition:} We derive General Relativity as an emergent hydrodynamic limit (System VI). This requires that gravity be asymptotically safe or non-perturbative in the UV. The discovery that gravity follows standard perturbative quantization (like QED) at the Planck scale would falsify the bulk regulator derivation.
-    
-    \item \textbf{The Fourth Generation Prohibition:} The chiral channel capacity is saturated at $\nu=16$ (3 generations + neutrinos). The discovery of a 4th generation of fermions would imply $\nu > 16$, falsifying the $E_8 \to D_4 \oplus D_4$ substrate hypothesis.
-    
+The following criteria test distinct aspects of the framework. Criteria 1, 2, 4, and 6 test the \textit{functional forms} derived entirely within this paper. Criteria 3 and 5 test the \textit{specific integer values} and structural invariants of the $E_8$ substrate :
+
+\begin{enumerate}    
     \item \textbf{Lorentz Violation at Low Energy:} The derivation of the Metric Signature relies on the Bandwidth Limit ($c_{eff}=1$). Any experimental confirmation of Lorentz violation (e.g., energy-dependent speed of light) at energies $E \ll M_P$ would invalidate the channel capacity argument.
 
-    \textbf{Dynamical Dark Energy ($\Lambda$ Evolution):} The Margin pillar strictly defines the Cosmological Constant as a static, non-derivative geometric baseline cost required to resolve the spatial manifold. Any confirmed detection of a time-varying equation of state ($w \neq -1$) or dynamically evolving dark energy would falsify the identification of $\Lambda$ as the static Margin cost.
+    \item \textbf{The Prohibition of Other Spins:} The substrate geometry strictly prohibits fundamental particles with spin $> 2$ (and fundamental half-integer spins $> 1/2$), providing a structural mechanism for the Weinberg-Witten theorem:
+    \begin{itemize}
+        \item \textbf{No Supersymmetry / Supergravity (Spin-3/2):} A fundamental spin-3/2 field (gravitino) requires a vector-spinor coupling. As established in the substrate projection, this cannot be constructed from the orthogonal $D_4 \oplus D_4$ decomposition without introducing geometrically suppressed mirror fermions. This structurally falsifies Supersymmetry as a fundamental property of the vacuum.
+        \item \textbf{No Spin $\ge$ 3:} A fundamental spin-3 field in 4D spacetime requires a totally symmetric rank-3 tensor, which possesses 20 independent components. Because the fundamental chiral bit-depth of the lattice node is strictly limited to $\nu=16$ \cite{meyer_informational_2026}, the substrate lacks the hardware channel capacity to encode or propagate a fundamental spin-3 state. Higher-spin extensions are therefore physically forbidden by Shannon capacity limits.
+    \end{itemize}
     
-    \item \textbf{The Lattice Stiffness Check ($\kappa \neq 1$):} The derivation of Gravity as a Goldstone mode closes the Einstein-Hilbert limit algebraically, but requires non-perturbative numerical confirmation. Constructing the Transfer Matrix $\hat{T}(\beta)$ of the $E_8$ substrate and computing the traceless-transverse correlator $C_{TT}(k)$ via Monte Carlo simulation must yield a dimensionless stiffness ratio converging to exactly unity:
-\begin{equation*}
-\kappa \equiv \frac{C_{TT}(k_{ref})}{(M_P^2/32\pi) k_{ref}^2} \to 1 \pm \mathcal{O}(1/\beta)
-\end{equation*}
-    A deviation $\kappa \neq 1$ (outside finite-size scaling errors) would imply that lattice artifacts disrupt the Goldstone mode, explicitly falsifying the emergence of General Relativity from this specific discrete substrate.
+    \item \textbf{The Fourth Generation Prohibition:} A single Standard Model generation (including right-handed neutrinos) requires exactly 16 chiral Weyl fermions. The internal chiral channel capacity is exactly saturated by this payload ($\nu=16$). The replication of this structure into exactly 3 generations is geometrically fixed by the unique \textbf{Triality} of the internal $D_4$ sector. The discovery of a 4th generation of fermions would require breaking this Triality or implying $\nu > 16$, either of which strictly falsifies the $E_8 \to D_4 \oplus D_4$ substrate hypothesis.
+    
+    \item \textbf{The Perturbative Gravity Prohibition:} We derive General Relativity as an emergent hydrodynamic limit (\cref{sec:toll_margin}). This requires that gravity be asymptotically safe or non-perturbative in the UV. The discovery that gravity follows standard perturbative quantization (like QED) at the Planck scale would falsify the bulk regulator derivation.
 
-    \textbf{The Prohibition of Other Spins:} The substrate geometry strictly prohibits fundamental particles with spin $> 2$, providing a structural mechanism for the Weinberg-Witten theorem:
-\begin{itemize}
-    \item \textbf{No Spin-3/2 (Gravitinos):} A spin-3/2 field requires a vector-spinor coupling. As established in the substrate projection, this cannot be constructed from the orthogonal $D_4 \oplus D_4$ decomposition without introducing geometrically suppressed mirror fermions. This structurally falsifies Supersymmetry as a fundamental property of the vacuum.
-    \item \textbf{No Spin $\ge$ 3:} A fundamental spin-3 field in 4D spacetime requires a totally symmetric rank-3 tensor, which possesses 20 independent components. Because the fundamental chiral bit-depth of the lattice node is strictly limited to $\nu=16$ \cite{meyer_informational_2026}, the substrate literally lacks the hardware channel capacity to encode or propagate a fundamental spin-3 state. Higher-spin extensions are therefore physically forbidden by Shannon capacity limits.
-\end{itemize}
 
+    \item \textbf{The Lattice Stiffness Check ($\kappa \neq 1$):} The derivation of Gravity as a Goldstone mode closes the Einstein-Hilbert limit algebraically, but this requires non-perturbative numerical confirmation. A full non-perturbative Monte Carlo simulation of the interacting $E_8$ substrate must reproduce a massless spin-2 correlator with the exact Einstein-Hilbert normalization. If lattice artifacts disrupt the Goldstone mode or gap the graviton, yielding a dimensionless stiffness ratio $\kappa \neq 1$ (outside finite-size scaling errors), it would explicitly falsify the emergence of General Relativity from this specific discrete substrate.
+
+    \item \textbf{Dynamical Dark Energy ($\Lambda$ Evolution):} The Margin pillar strictly defines the Cosmological Constant as a static, non-derivative geometric baseline cost required to resolve the spatial manifold. Any confirmed detection of a time-varying equation of state ($w \neq -1$) or dynamically evolving dark energy would falsify the identification of $\Lambda$ as the static Margin cost.
 \end{enumerate}

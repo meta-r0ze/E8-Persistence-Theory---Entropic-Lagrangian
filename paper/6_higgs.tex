@@ -1,23 +1,23 @@
-\section{The Governor (Higgs potential)}
+\section{The Governor (Higgs Potential)}
 \label{sec:governor}
 
 \textbf{The Architectural Goal:}
 \begin{itemize}
-    \item \textbf{Governor ($|D_\mu\phi|^2 - V(\phi)$):} \textit{The Cost of Stability.} The Higgs potential is the boundary controller. The quadratic term ($-\mu^2$) drives the lattice to non-zero occupancy, while the quartic term ($+\lambda$) enforces the hard bit-depth limit ($\nu=16$), preventing UV divergence.
+    \item \textbf{Governor ($-|D_\mu\phi|^2 - V(\phi)$):} \textit{The Cost of Stability.} The Higgs potential acts as the active boundary controller of the vacuum. The negative quadratic term ($-\mu^2$) acts as a penalty preventing \textbf{Information Starvation} (driving the lattice away from an empty, zero-information state). Conversely, the positive quartic term ($+\lambda$) acts as the steep penalty preventing \textbf{Causal Aliasing} (enforcing the hard bit-depth limit $\nu=16$ to physically halt UV divergence before the local node's channel capacity is exceeded).
 \end{itemize}
 
-We must derive the mechanism that stabilizes the lattice geometry itself. In the Universal Architecture, the \textbf{Governor} pillar is required to prevent the system from diverging (Causal Disconnect) or collapsing (Singularity).
+We must derive the mechanism that stabilizes the lattice geometry itself. In the Universal Architecture, the \textbf{Governor} pillar is required to prevent the system from collapsing into an empty null state or diverging beyond its hardware limits.
 
-In a lattice gauge theory, the link variables ($U_\mu$) defined by the Protocol dictate the phase angles between nodes, but they do not define the \textit{scale} or ``stiffness'' of the node itself. We introduce a complex scalar field $\phi(x)$ representing the \textbf{Active Occupancy} (or localized volume) of the lattice site $x$.
+In a lattice gauge theory, the link variables ($U_\mu$) defined by the Protocol dictate the phase angles between nodes, but they do not define the \textit{scale} or ``stiffness'' of the node itself. To resolve this, we introduce a complex scalar field $\phi(x)$, representing the \textbf{Active Occupancy} (the localized volume or amplitude) of the lattice site $x$.
 
-The Entropic Action for this sector is derived from two competing information-theoretic imperatives: the need to maintain synchronized causal contact (Kinetic) and the need to remain within finite hardware capacity limits (Potential).
+The Entropic Action for this sector is derived from two competing information-theoretic imperatives: the need to maintain synchronized causal contact (the Kinetic term) and the need to remain within finite hardware capacity limits (the Potential term).
 
 \subsection{The Kinetic Governor: Covariant Consistency}
-Changes in the lattice occupancy ($\partial_\mu \phi$) cannot occur independently of the Protocol (the gauge field). Because the Protocol pillar mandates the link variable $U_\mu$ to synchronize phase, any spatial gradient in a node's occupancy state must be evaluated relative to this local phase frame. 
+Changes in the local lattice occupancy ($\partial_\mu \phi$) cannot occur independently of the Protocol (the gauge field). Because the Protocol pillar mandates the link variable $U_\mu$ to synchronize phase, any spatial gradient in a node's occupancy state must be evaluated relative to this local phase frame. 
 
 To maintain Unitarity across the lattice, the bare scalar derivative must be corrected by the connection $A_\mu$. We replace the partial derivative with the Covariant Derivative, $D_\mu = \partial_\mu - igA_\mu$. The entropic cost of changing the local lattice scale is the square of this synchronized gradient:
 \begin{equation}
-    \mathcal{L}_{Kinetic} = (D_\mu \phi)^\dagger (D^\mu \phi)
+    \mathcal{L}_{Kinetic} = -(D_\mu \phi)^\dagger (D^\mu \phi)
 \end{equation}
 This term structurally couples the Governor to the Protocol. By penalizing the gauge field where the lattice occupancy is non-zero, it geometrically endows the associated gauge bosons with an impedance cost (mass).
 
@@ -26,9 +26,9 @@ The potential $V(\phi)$ is not an arbitrary polynomial; it is the mathematical \
 
 \begin{enumerate}
     \item \textbf{Vacuum Pressure (The Negative Quadratic):}
-    The vacuum is a persistent system, not a void. A state of absolute zero occupancy ($\phi = 0$) contains no information and thus violates the \textbf{Capacity} pillar. To persist, the lattice must spontaneously populate.
+    The vacuum is a persistent system, not a mathematical void. A state of absolute zero occupancy ($\phi = 0$) possesses no structural complexity ($\mathbf{K}=0$), contains no information, and therefore cannot sustain a \textbf{Map} or exercise its \textbf{Capacity}. To exist as a persistent physical entity rather than a trivial null state, the lattice must spontaneously populate.
     
-    This manifests as an informational instability near the origin---a ``tachyonic'' or negative effective mass-squared---driving the field away from the trivial empty state:
+    This manifests as an informational instability near the origin—a ``tachyonic'' or negative effective mass-squared—driving the field away from the trivial empty state:
     \begin{equation}
         V_{pressure} = -\mu^2 |\phi|^2
     \end{equation}
@@ -52,13 +52,17 @@ Summing these constraints yields the canonical Higgs Potential:
 
 \textbf{Conclusion:} The ``Mexican Hat'' potential is not an \textit{ad hoc} phenomenological choice. It is the strictly unique, dimensionally constrained solution to a \textbf{Finite Capacity Control Problem}. The system must be driven away from silence ($-\mu^2$) but restrained from infinite noise ($+\lambda$). 
 
-\textbf{Scope Limitation:} In standard Effective Field Theories, higher-order scalar terms (e.g., $\phi^6$) are permitted and merely suppressed by an arbitrary UV cutoff. In the general \textit{Informational Energetics} framework, the Equipartition of Entropic Cost strictly bounds all terms to mass dimension 4. Furthermore, under the specific $E_8$-Persistence Theory, the discrete substrate's absolute hardware limit ($\nu=16$) dictates that the local node literally lacks the channel capacity to physically resolve higher-order vertices, causing instantaneous causal aliasing. Therefore, the polynomial is exactly and rigorously truncated at the quartic term. (Note: This paper strictly derives the structural \textit{form} of the potential.
-
+\textbf{The Hardware Cutoff ($\nu=16$):}  In the general \textit{$E_8$-Persistence} theory, the Equipartition of Entropic Cost strictly bounds all terms to mass dimension 4. Furthermore, under the specific $E_8$-Persistence theory, the discrete substrate's absolute hardware limit ($\nu=16$) dictates that the local node literally lacks the channel capacity to physically resolve higher-order vertices, causing instantaneous causal aliasing. Therefore, the polynomial is exactly and rigorously truncated at the quartic term.
 
 \subsection{Consequence: Renormalization as Channel Capacity}
 \label{subsec:uv_completion}
-Standard QFT requires renormalization because it assumes the vacuum is a continuum with infinite capacity. The Entropic Lattice has a hard physical limit: the node capacity $\nu=16$.
 
-We identify the ``Cutoff Scale'' $\Lambda_{UV}$ not as a mathematical trick, but as the \textbf{Shannon Channel Capacity} of the geometry. When the energy density $\mathbf{K}$ approaches the node capacity limit, the entropic cost diverges asymptotically. This enforces a natural, physical UV completion at the Planck scale without requiring manual regularization.
+Standard QFT requires renormalization because it models the vacuum as a continuous manifold with infinite information capacity. The $E_8$-Persistence Lattice has a hard physical limit: the discrete node capacity ($\nu=16$).
 
-Furthermore, because the structural cutoff ($\nu=16$) and the resulting mass scales emerge from the same finite substrate integers, the Higgs mass is not subject to unbounded radiative corrections. The Hierarchy Problem dissolves: there is no independent continuous Planck scale to which the Higgs mass must be artificially tuned, as both scales are geometrically constrained by the same discrete architecture. (The exact quantitative derivation of the $M_P / m_H$ ratio is deferred to the companion paper on Geometric Constants).
+We identify the QFT ``Cutoff Scale'' ($\Lambda_{UV}$) not as a mathematical trick to hide infinities, but as the literal \textbf{Shannon Channel Capacity} of the geometry. When the energy density $\mathbf{K}$ approaches this node capacity limit, the entropic cost diverges asymptotically. This enforces a natural, physical UV completion at the Planck scale, halting interactions before the local channel overflows, without requiring manual regularization.
+
+Furthermore, because the Higgs mass and the Planck mass scales emerge from the exact same discrete geometry and substrate integers, they are structurally locked. The Higgs mass is inherently protected from unbounded radiative corrections because the substrate physically cannot resolve the infinite loop momenta assumed by continuum mathematics. There is no independent, continuous Planck scale to which the Higgs mass must be artificially tuned. 
+
+The Hierarchy Problem therefore \textit{dissolves}: it is an artifact of the continuous approximation.
+
+(Note: While this establishes the \textit{structural form} of the physical UV cutoff and the necessity of the Higgs mass, the explicit calculation of the Higgs-to-Planck mass ratio $m_H/M_P$ directly from the discrete $E_8$ lattice integers is deferred to the companion paper \textit{The Geometric Constants}.)
