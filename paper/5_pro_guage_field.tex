@@ -51,13 +51,15 @@ where $F_{\mu\nu}$ is the non-Abelian field strength tensor, representing the lo
 \subsection{The Exact Truncation: Enforcing the Dimensional Budget}
 
 \textbf{3. The Hardware Limit (Truncation):}
-In standard continuous mathematics, expanding the exponential $e^{-ix} = 1 - ix - x^2/2 + \mathcal{O}(x^3)$ yields an infinite Taylor series. Standard Effective Field Theory permits this infinite tower of operators, suppressing them by arbitrary mass scales. 
+Expanding the geometric path exponential $e^{-ix} \approx 1 - ix - x^2/2 + \mathcal{O}(x^3)$ yields an infinite series in standard continuum mathematics. However, as established by the \textbf{Dimensional Budget} (\cref{sec:equipartition}), the discrete substrate's finite node capacity ($\nu=16$) acts as a hard physical cutoff. 
 
-In the \textit{$E_8$-Persistence} theory, this expansion is rigorously truncated by the \textbf{Dimensional Budget} established in \cref{subsec:mapping_rules}. Because the field strength $F_{\mu\nu}$ has mass dimension 2, the quadratic term $F_{\mu\nu} F^{\mu\nu}$ exactly exhausts the maximum permitted dimension of 4. Higher-order terms (e.g., $F^3$ of dimension 6) require local informational payloads that exceed the finite chiral bit-depth of the lattice node ($\nu=16$). They are not mathematically suppressed; they are physically unresolvable, causing instantaneous causal aliasing. 
+Because the field strength $F_{\mu\nu}$ has mass dimension 2, the quadratic term $F_{\mu\nu}F^{\mu\nu}$ exactly exhausts the maximum permitted dimension of 4. Higher-order terms (e.g., $F^3$ or $F^4$) are physically forbidden because they require local informational payloads exceeding the node's finite capacity, causing instantaneous causal aliasing. 
 
-Since the first-order term ($ix$) vanishes under the real trace, the hardware strictly bounds the deviation to exactly the second-order term:
+Furthermore, as established in \cref{sec:unitary_flux_constraint}, the kinematic bandwidth limit fixes the spatial hopping amplitude $w=1/2$, which directly corresponds to the gauge coupling coefficient $g=1/2$ in the continuum limit, leaving no free tuning parameters.
+
+Since the first-order term ($ix$) vanishes under the real trace, the structurally bounded deviation becomes exactly:
 \begin{equation}
-    1 - \frac{1}{d_G}\operatorname{Re} \operatorname{Tr}(P_{\mu\nu}) = \frac{g^2 \ell^4}{2d_G} \operatorname{Tr}(F_{\mu\nu} F^{\mu\nu})
+    1 - \frac{1}{d_G} \text{Re}\text{Tr}(P_{\mu\nu}) = \frac{g^2 \ell^4}{2d_G} \text{Tr}(F_{\mu\nu}F^{\mu\nu})
 \end{equation}
 
 \textbf{4. The Continuum Limit (Geometric Synthesis):}
