@@ -14,7 +14,7 @@ We first derive the dynamics of the \textbf{Map} pillar by defining the evolutio
 \subsection{The Unitary Flux Constraint}
 \label{sec:unitary_flux_constraint}
 
-The Map pillar requires that information propagate locally while strictly conserving probability amplitude (Unitarity). The uniquely appropriate discretization scheme to enforce the three core architectural requirements derived for the vacuum: locality (nearest-neighbor transitions), unitarity (probability conservation at each discrete step), and finiteness (a strictly bounded state space per node), is structurally equivalent to the \textbf{Quantum Lattice Gas Automaton (QLGA)} formalism \cite{meyer_quantum_1996}, generalizing the Feynman Checkerboard model\cite{feynman_quantum_1965} to the $D_4$ geometry.
+The Map pillar requires that information propagate locally while strictly conserving probability amplitude (Unitarity). The uniquely appropriate discretization scheme to enforce the three core architectural requirements derived for the vacuum: locality (nearest-neighbor transitions), unitarity (probability conservation at each discrete step), and finiteness (a strictly bounded state space per node), is structurally equivalent to the \textbf{Quantum Lattice Gas Automaton (QLGA)} formalism \cite{meyer_quantum_1996}\footnote{The QLGA formalism provides a rigorous mathematical framework for unitary, local, discrete-time evolution on a lattice. Our discrete update rule is structurally equivalent to a QLGA on the $D_4$ geometry. Crucially, it is \emph{not} a Wilson-fermion discretization. Standard Wilson fermions suppress doublers by introducing an ad hoc dimension-5 operator ($a \nabla^2$), which strictly violates our Equipartition of Entropic Cost (\cref{subsec:mapping_rules}) by exceeding the node capacity limit ($\nu=16$). Instead, the $E_8$-Persistence theory lattice evades fermion doubling purely geometrically: the orthogonal projection strictly isolates the mirror chiralities into the static internal sector, requiring no continuum-limit cancellations.}, generalizing the Feynman Checkerboard model\cite{feynman_quantum_1965} to the $D_4$ geometry.
 
 \textbf{The Discrete Update.} The fermion state $\psi$ (a 16-component chiral spinor occupying the node capacity $\nu=16$) updates via a unitary operator combining two actions:
 \begin{enumerate}
@@ -55,17 +55,21 @@ The precise geometric nature and algebraic properties of the transition matrices
 
 \textbf{Architectural Requirement:} The \textbf{Map} pillar requires lossless propagation of a complex signal with precise directional resolution across the discrete substrate.
 
-\textbf{Lattice Constraint:} To preserve the Lorentzian causal structure derived from the $E_8 \to D_4 \oplus D_4$ projection \cite{meyer_informational_2026}, spatial transitions to nearest-neighbor nodes ($e_k$) must be mediated by internal geometric generators. These transition matrices ($\Gamma_\mu$) must satisfy the metric of the causal manifold, strictly enforcing the anti-commutation relation for the $D_4$ causal lattice basis:
-\begin{equation}
-    \{\Gamma_\mu, \Gamma_\nu\} \equiv \Gamma_\mu\Gamma_\nu + \Gamma_\nu\Gamma_\mu = 2\eta_{\mu\nu}\mathbb{I} \label{eq:anti_commute}
-\end{equation}
-where $\eta_{\mu\nu} = \text{diag}(-1, +1, +1, +1)$ is the emergent Lorentzian metric signature.
+\textbf{Lattice Constraint:} The transition matrices ($\Gamma_\mu$) mediating nearest-neighbor updates must simultaneously satisfy two architectural requirements: Unitarity (probability conservation at each discrete step) and metric compatibility (reproducing the Lorentzian causal structure derived from the $E_8 \to D_4 \oplus D_4$ projection \cite{meyer_informational_2026}). 
 
-\textbf{Recognition:} Equation \ref{eq:anti_commute} is exactly the defining algebra of the Dirac gamma matrices ($\gamma^\mu$). Therefore, we explicitly identify the internal lattice transition matrices with the gamma matrices ($\Gamma^\mu \equiv \gamma^\mu$).
+To ensure isotropic propagation, the cross-terms of the discrete spatial transitions must identically vanish. The unique algebraic relation satisfying both the Unitarity constraint and the metric signature is the anti-commutation relation:
+\begin{equation}
+    \{\Gamma_\mu, \Gamma_\nu\} \equiv \Gamma_\mu\Gamma_\nu + \Gamma_\nu\Gamma_\mu = 2\eta_{\mu\nu}\mathbb{I}
+\label{eq:anti_commute}
+\end{equation}
+where $\eta_{\mu\nu} = \operatorname{diag}(-1,+1,+1,+1)$ is the emergent Lorentzian metric, geometrically enforcing $(\Gamma_0)^2 = -\mathbb{I}$ (temporal inversion) and $(\Gamma_k)^2 = +\mathbb{I}$ (spatial reflection) for spatial indices $k$.
+
+\textbf{Recognition:} This anti-commutation relation is not a postulated quantum mechanical spin algebra; it is the strict geometric requirement for preserving causal structure on the lattice. Because \cref{eq:anti_commute} is identically the defining algebra of the Dirac matrices, we explicitly identify the internal lattice transition matrices with the physical gamma matrices ($\Gamma^\mu \equiv \gamma^\mu$).
 
 To recover the covariant Dirac equation, we multiply the continuum equation by $\gamma^0$ (utilizing the Lorentzian metric property $(\gamma^0)^2 = -1$), which perfectly recovers the covariant form:
 \begin{equation}
-    (i\gamma^\mu \partial_\mu - m)\psi = 0 \label{eq:covariant_dirac}
+    (i\gamma^\mu \partial_\mu - m)\psi = 0
+    \label{eq:covariant_dirac}
 \end{equation}
 
 \subsection{The Chiral Filter: Geometric Origin of Parity Violation}
@@ -73,7 +77,7 @@ Standard QFT inserts the chiral projection $P_L = \frac{1-\gamma^5}{2}$ by hand 
 
 The \textbf{Map} pillar requires information to propagate on the causal (Lorentzian) manifold. The geometric projection $E_8 \to D_4 \oplus D_4$ splits the 16-component spinor into two orthogonal sectors. Because the Lorentzian signature assigns the active temporal generator ($\partial_t$) exclusively to the spacetime sector, the corresponding internal symmetry sector is strictly Euclidean. 
 
-Consequently, the Dirac equation derived above automatically decomposes. The left-handed components evolve actively under the temporal generator, while the right-handed components remain static with respect to the internal symmetry's active temporal flow. 
+Consequently, the Dirac \cref{{eq:covariant_dirac}} automatically decomposes. The left-handed components evolve actively under the temporal generator, while the right-handed components remain static with respect to the internal symmetry's active temporal flow. 
 
 Thus, the bare internal gauge generators necessarily couple only to the left-handed projection $P_L\psi$. Maximum parity violation is enforced by the geometric absence of a temporal update path for the right-handed sector within the internal symmetry space, rendering right-handed fermions strictly as singlets under this bare interaction (the structural origin of the Weak interaction's $SU(2)_L$ chirality).
 
@@ -88,7 +92,7 @@ However, as derived in the previous section, the $E_8 \to D_4 \oplus D_4$ projec
 
 \textbf{The Scalar Bridge and the Dimensional Budget:} How does the system bridge these orthogonal sectors to achieve Capacity? We return to the Dimensional Budget established in \cref{subsec:restmass}. A fermion node intrinsically consumes 3 units of the dimensional budget. To persist across continuous temporal updates without spatial translation (kinetic flux $f \to 0$), it must couple to exactly one dimension-1 structural parameter to exactly saturate the Equipartition of Entropic Cost ($[K] + [f] = 4$).
 
-Because a static bare mass ($m$) is forbidden by the orthogonal geometry, this 1-dimensional bridge cannot be a rigid constant. It mathematically must be a dynamic, phase-carrying scalar field capable of mediating momentum and quantum numbers across the orthogonal boundary. Rather than an ad-hoc invention, this scalar field is the physical manifestation of the \textbf{Governor} pillar (whose full dynamics are derived independently in \cref{sec:governor}).
+Because a static bare mass ($m$) is forbidden by the orthogonal geometry, this 1-dimensional bridge cannot be a rigid constant. It mathematically must be a dynamic, phase-carrying scalar field capable of mediating momentum and quantum numbers across the orthogonal boundary. Rather than an ad-hoc invention, this scalar field is the physical manifestation of the Governor pillar (the constraint mechanism preventing unbounded divergence, \cref{sec:governor}).
 
 \textbf{The Yukawa Operator:} To arrest information flow and satisfy Capacity, the geometry uniquely mandates that the fermion couples to this Governor field ($\phi$). The bare $\mathcal{L}_{CAP}$ term must therefore take the form of a Yukawa Coupling:
 \begin{equation}
@@ -98,4 +102,4 @@ where $y$ is the geometric admittance of the chiral bridge, fixed by the substra
 
 In Quiescent Equilibrium, where the Governor field minimizes its own entropic action by settling to a constant non-zero background expectation value ($\langle\phi\rangle$), this dynamic bridging operator reduces exactly to the effective mass impedance term presented in the Entropic Balance Sheet: $\mathcal{L}_{CAP} \to -m\bar{\psi}\psi$, where $m = y\langle\phi\rangle$.
 
-\textbf{Conclusion: The Physical Nature of Mass.} This derivation reframes the physical nature of mass. The Dirac equation is not an axiom, nor are its chiral gauge restrictions arbitrary; it is the hydrodynamic limit of a discrete, unitary cellular automaton evolving on a spinor lattice. The ``matrices'' of the Standard Model are simply the transition generators of the underlying geometry. Crucially, fermion mass is not an intrinsic, fundamental property of a particle. It is the geometric impedance ($m = y\langle\phi\rangle$) generated by the scalar boundary field, the necessary thermodynamic drag required to arrest a state from dissipating at the speed of light, locking a topological defect into a persistent local capacity.
+\textbf{Conclusion: The Physical Nature of Mass.} The Dirac equation is not an axiom; it is the hydrodynamic limit of a discrete, unitary cellular automaton evolving on a spinor lattice. Fermion mass ($m = y\langle\phi\rangle$) is the geometric impedance required to arrest a state from dissipating at the speed of light, locking a topological defect into a persistent local capacity.

@@ -21,7 +21,8 @@ where $A_\mu$ is the connection coefficient (the gauge potential), $g$ is the co
 
 Because the discrete substrate lacks an absolute external reference frame, a node cannot detect a phase error simply by querying a neighbor; local gauge choices are autonomous and arbitrary. The only structurally invariant way to measure a synchronization error (curvature) without an external clock is through a closed-loop consistency check, transporting a state through the network and comparing it against its original self. 
 
-The minimal resolution loop on a discrete grid is the \textbf{Plaquette} ($P_{\mu\nu}$), a square traversal of four links:
+The minimal resolution loop on a discrete grid is the \textbf{Plaquette} ($P_{\mu\nu}$), a square traversal of four links. Shorter loops are invalid: a backtrack ($A \to B \to A$) is trivially unity by unitarity, and a triangle is forbidden by the orthogonal basis of the $D_4$ lattice. The plaquette is therefore the minimal non-trivial loop capable of detecting a synchronization deficit.
+
 \begin{equation}
     P_{\mu\nu}(x) = U_\mu(x) U_\nu(x+\hat{\mu}) U^\dagger_\mu(x+\hat{\nu}) U^\dagger_\nu(x)
 \end{equation}
@@ -36,26 +37,27 @@ The mathematically unique way to extract a real, basis-independent scalar measur
 \begin{equation}
     S_{plaquette} = \beta_L \sum_{\square} \left( 1 - \frac{1}{d_G} \operatorname{Re} \operatorname{Tr}(P_{\mu\nu}) \right)
 \end{equation}
-where $d_G$ is the dimension of the gauge group representation, and $\beta_L = 2d_G/g^2$ is the dimensionless structural weight of the lattice. (\textit{Parameter-Free Note:} $\beta_L$ is not an arbitrary tunable temperature; because the transmission efficiency $g$ is strictly fixed by the kinematic bandwidth limit $g = 1/2c$ derived in \cref{sec:map_capacity}, $\beta_L$ is an immutable geometric invariant).
+where $d_G$ is the dimension of the gauge group representation, and $\beta_L = 2d_G/g^2$ is the dimensionless structural weight of the lattice. (\textit{Parameter-Free Note:} $\beta_L$ is not an arbitrary tunable temperature; because the transmission efficiency is strictly fixed by the kinematic bandwidth limit to the bare coupling $g_{\mathrm{bare}} = 1/2$ derived in \cref{sec:map_capacity}, $\beta_L$ is an immutable geometric invariant).
 
 \textbf{2. The Kinematic Gradient (Field Strength):} 
-To evaluate this deviation locally, we map the discrete boundary loop to an internal kinematic gradient. By the Baker-Campbell-Hausdorff (BCH) formula, the product of phase exponentials around the loop is exactly the commutator of their derivatives:
+To evaluate this deviation locally, we map the discrete boundary loop to an internal kinematic gradient. By the Baker-Campbell-Hausdorff (BCH) formula, the product of phase exponentials around the loop yields, to leading order in the lattice spacing, the commutator of their derivatives:
 \begin{equation}
 \begin{split}
     P_{\mu\nu} &= \exp\left( -ig \ell^2 (\partial_\mu A_\nu - \partial_\nu A_\mu - ig[A_\mu, A_\nu]) \right) \\
     &= \exp\left( -ig \ell^2 F_{\mu\nu} \right)
 \end{split}
 \end{equation}
-where $F_{\mu\nu}$ is the non-Abelian field strength tensor, representing the local density of phase decoherence.
+where $F_{\mu\nu}$ is the non-Abelian field strength tensor, representing the local density of phase decoherence. The BCH expansion formally contains higher-order terms; their physical elimination by the substrate's finite capacity is established in \cref{sec:exact_truncation}.
 
 \subsection{The Exact Truncation: Enforcing the Dimensional Budget}
+\label{sec:exact_truncation}
 
 \textbf{3. The Hardware Limit (Truncation):}
 Expanding the geometric path exponential $e^{-ix} \approx 1 - ix - x^2/2 + \mathcal{O}(x^3)$ yields an infinite series in standard continuum mathematics. However, as established by the \textbf{Dimensional Budget} (\cref{sec:equipartition}), the discrete substrate's finite node capacity ($\nu=16$) acts as a hard physical cutoff. 
 
-Because the field strength $F_{\mu\nu}$ has mass dimension 2, the quadratic term $F_{\mu\nu}F^{\mu\nu}$ exactly exhausts the maximum permitted dimension of 4. Higher-order terms (e.g., $F^3$ or $F^4$) are physically forbidden because they require local informational payloads exceeding the node's finite capacity, causing instantaneous causal aliasing. 
+Because the field strength $F_{\mu\nu}$ has mass dimension 2, the quadratic term $F_{\mu\nu}F^{\mu\nu}$ exactly exhausts the maximum permitted dimension of 4. Higher-order terms (e.g., $F^3$ or $F^4$) are physically forbidden because they require local informational payloads exceeding the node's finite capacity, causing instantaneous Causal Aliasing. 
 
-Furthermore, as established in \cref{sec:unitary_flux_constraint}, the kinematic bandwidth limit fixes the spatial hopping amplitude $w=1/2$, which directly corresponds to the gauge coupling coefficient $g=1/2$ in the continuum limit, leaving no free tuning parameters.
+Furthermore, the kinematic bandwidth limit $c_{\mathrm{eff}} = \ell/\tau = 1$ strictly fixes the maximum information transfer rate across any lattice link. For fermion propagation (the Map pillar), this constrained the spatial hopping amplitude to exactly $w = 1/2$. For gauge field synchronization (the Protocol pillar), this exact same bandwidth limit applies. Because the substrate dictates exactly one spatial transition per temporal update, the phase rotation applied by the link variable $U_\mu$ during that transition is \emph{part of the same geometric step}, not an independent operation. A mismatch ($g \neq w$) would require the internal phase to propagate at a different rate than the spatial state it is attached to, violating the single-speed bandwidth limit. This physically forces the bare, un-renormalized lattice coupling to $g_{\mathrm{bare}} = 1/2$. (The mapping of this universal lattice efficiency to the specific observed gauge couplings of $SU(3)_c \times SU(2)_L \times U(1)_Y$ via their respective Casimir invariants is evaluated in subsequent work).
 
 Since the first-order term ($ix$) vanishes under the real trace, the structurally bounded deviation becomes exactly:
 \begin{equation}
@@ -63,11 +65,13 @@ Since the first-order term ($ix$) vanishes under the real trace, the structurall
 \end{equation}
 
 \textbf{4. The Continuum Limit (Geometric Synthesis):}
-To transition from the discrete local count to the macroscopic covariant action, the system must account for geometric symmetries. Converting the restricted sum over unoriented plaquettes ($\mu < \nu$) into a full covariant tensor contraction ($F_{\mu\nu}F^{\mu\nu}$) introduces a symmetry factor of $1/2$. Replacing the discrete sum with the continuous spacetime measure ($\sum_{\square} \ell^4 \to \frac{1}{2} \int d^4x$) and substituting the structural weight ($\beta_L = 2d_G/g^2$) precisely cancels all lattice prefactors. 
+To transition from the discrete local count to the macroscopic covariant action, the system must account for geometric symmetries. Converting the restricted sum over unoriented plaquettes ($\mu < \nu$) into a full covariant tensor contraction ($F_{\mu\nu}F^{\mu\nu}$) introduces a symmetry factor of $1/2$. Replacing the discrete 
+coordinate sum with the continuous spacetime measure ($\sum_{x} \ell^4 \to \int d^4x$) and substituting the structural weight ($\beta_L = 2d_G/g^2$) precisely cancels all lattice prefactors.
 
-Finally, imposing the causal Minkowski metric $\eta_{\mu\nu} = \text{diag}(-1, 1, 1, 1)$ required by the \textbf{Toll} pillar introduces a global negative sign to ensure the electric field kinetic energy remains positive definite. This yields the exact continuum action:
+Finally, imposing the causal Minkowski metric $\eta_{\mu\nu} = \operatorname{diag}(-1, +1, +1, +1)$ required by the \textbf{Toll} pillar introduces a global negative sign to ensure the electric field kinetic energy remains positive definite. This yields the exact continuum action:
 \begin{equation}
-    S_{Gauge} = - \frac{1}{4} \int d^4x \operatorname{Tr}(F_{\mu\nu} F^{\mu\nu})
+    S_{\text{Gauge}} = -\frac{1}{2} \int d^4x\, \operatorname{Tr}(F_{\mu\nu}F^{\mu\nu}) = -\frac{1}{4} \int d^4x\, F^a_{\mu\nu}F^{a\,\mu\nu}
 \end{equation}
+where the second equality follows from the standard normalization $\operatorname{Tr}(T^a T^b) = \frac{1}{2}\delta^{ab}$.
 
 \textbf{Conclusion:} The Yang-Mills kinetic term is not an arbitrary mathematical postulate. It is the strictly unique, lowest-order penalty function capable of enforcing the Protocol's phase synchronization constraint across a finite, discrete, causal substrate.

@@ -3,29 +3,33 @@
 
 \subsection{The Operator Exhaustion Principle}
 
-Having systematically derived the complete Entropic Lagrangian (Equation \ref{eq:entropic_lagrangian}), we must now close the framework. To elevate this derivation from a structural suggestion to a strict implication, we establish that within the Informational Energetics framework, no other functional operators can physically exist.
+Having systematically derived the complete Entropic Lagrangian (\cref{eq:entropic_lagrangian}), we must now close the framework. To elevate this derivation from a structural suggestion to a strict implication, we establish that within the Informational Energetics framework, no other functional operators can physically exist.
 
 Standard Effective Field Theory permits an infinite tower of higher-dimensional operators, suppressed only by an arbitrary mass scale. In the $E_8$-Persistence theory, the finite capacity ($\nu=16$) acts as a physical ultraviolet cutoff, rendering the operator space exhausted by construction:
 
 \begin{enumerate}
     \item \textbf{The Kinematic Ceiling (No Higher Derivatives):} The capacity limit $c_{eff} = 1$ restricts state synchronization to nearest-neighbor transitions per update cycle. Second-order spatial derivatives (bosons) and first-order temporal/spatial derivatives (fermions) exactly saturate this local neighborhood step. Operators with higher-order derivatives (e.g., $\partial^4\phi$) require an extended evaluation stencil concurrently. This demands an information transfer rate exceeding one node per update cycle (coupling next-nearest neighbors or beyond), strictly violating the Shannon Channel Capacity limit of the fundamental causal cycle.
 
-    \item \textbf{The Capacity Ceiling (No Higher-Order Vertices):} Thermodynamic stability requires the Equipartition of Entropic Cost, structurally bounding all interaction vertices to mass dimension 4. The finite chiral bit-depth ($\nu = 16$) establishes why this equipartition is a hard physical law rather than a perturbative approximation. Higher-order polynomials (such as a 6-point scalar interaction $\phi^6$ or a 4-fermion contact interaction $\bar{\psi}\psi\bar{\psi}\psi$) require a local informational payload that exceeds the $\nu = 16$ hardware limit. They cannot be physically resolved by the discrete substrate, causing instantaneous causal aliasing.
+    \item \textbf{The Capacity Ceiling (No Higher-Order Vertices):} Thermodynamic stability requires the Equipartition of Entropic Cost, structurally bounding all interaction vertices to mass dimension 4. The finite chiral bit-depth ($\nu = 16$) establishes why this equipartition is a hard physical law rather than a perturbative approximation. Higher-order polynomials (such as a 6-point scalar interaction $\phi^6$ or a 4-fermion contact interaction $\bar{\psi}\psi\bar{\psi}\psi$) require a local informational payload that exceeds the $\nu = 16$ hardware limit. They cannot be physically resolved by the discrete substrate, causing instantaneous Causal Aliasing.
 \end{enumerate}
 
 \textbf{Conclusion:} Because the derived terms ($D_\mu, F_{\mu\nu}, \phi^4, R$) completely saturate both the kinematic bandwidth and the local node capacity, the space of allowed physical operators is mathematically exhausted. The exact functional form of the Standard Model Lagrangian is therefore not merely suggested by the architecture of persistence; it is uniquely and entirely implied by it.
 
 \subsection{The Bifurcation of State: Matter vs. Radiation}
 \label{sec:matter_radiation}
-We can formally prove that this Lagrangian allows for exactly two stable phases of information propagation, corresponding to the observed division of nature into Matter and Radiation. Minimizing the dissipation functional $\mathcal{D} \propto \mathbf{K} \cdot f$ (the product of structural complexity and transition flux) yields two asymptotic solutions:
+
+We demonstrate that this Lagrangian admits exactly two stable phases of information propagation, corresponding to the observed division of nature into Matter and Radiation. Minimizing the dissipation functional $\mathcal{D} \propto \mathbf{K} \cdot f$ (the product of structural complexity and transition flux) yields two asymptotic solutions. Intermediate configurations ($0 < \mathbf{K}$, $0 < v < c$) are not stable minima. The product $\mathbf{K} \cdot f$ admits no interior stationary point, so the dissipation functional is minimized only at the boundary of the $(\mathbf{K}, f)$ configuration space:
 
 \begin{itemize}
     \item \textbf{Case A: The Radiation Solution ($\mathbf{K} \to 0$):} 
-    If the transition flux is high ($f > 0$), the structural complexity (mass) must vanish to keep the action finite.
+    If the state propagates at the maximum kinematic bandwidth limit ($v=c$, a lightlike trajectory $ds^2=0$), the transition flux exactly saturates the channel's transmission capacity. To prevent causal aliasing, the internal structural complexity (rest mass) must be strictly zero. 
+    
     \textit{Physical Outcome:} Massless Bosons (Photons, Gluons, Gravitons) that carry signals but possess no rest frame.
 
-    \item \textbf{Case B: The Matter Solution ($f_{kin} \to 0$):}
-    If the structural complexity is non-zero ($\mathbf{K} > 0$), the relative kinematic flux must vanish in its own rest frame. To arrest spatial translation and maintain this static local capacity against the vacuum, the particle must achieve \textbf{Topological Closure} ($\chi=2$).
+    \item \textbf{Case B: The Matter Solution ($v < c$):}
+    If the state possesses internal structural complexity ($\mathbf{K} > 0$), it cannot propagate at the bandwidth limit without overflowing the local channel capacity. It must propagate at $v < c$ (a timelike trajectory $ds^2 < 0$, possessing a valid rest frame). To minimize entropic drag while arresting spatial translation against the vacuum, the particle must achieve \textbf{Topological Closure} ($\chi=2$). 
+    
+    \textit{Physical Outcome:} Massive particles (fundamental fermions and Governor-coupled bosons) anchored to local spatial coordinates by topological or gauge-geometric impedance.
 \end{itemize}
 
-These are the only two asymptotic minima of the dissipation functional. The observed division of nature into massive fermions and massless bosons is therefore not a contingent feature of the Standard Model; it is the inevitable bifurcation of any information-processing substrate minimizing entropic drag.
+These are the only two asymptotic minima of the dissipation functional. The observed division of nature into massive particles and massless radiation is therefore not a contingent feature of the Standard Model; it is the inevitable bifurcation of any information-processing substrate minimizing entropic drag.
