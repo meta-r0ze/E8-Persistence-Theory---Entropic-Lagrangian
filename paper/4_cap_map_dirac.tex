@@ -17,9 +17,11 @@ We first derive the dynamics of the \textbf{Map} pillar by defining the evolutio
 The Map pillar requires that information propagate locally while strictly conserving probability amplitude (Unitarity). The uniquely appropriate discretization scheme to enforce the three core architectural requirements derived for the vacuum: locality (nearest-neighbor transitions), unitarity (probability conservation at each discrete step), and finiteness (a strictly bounded state space per node), is structurally equivalent to the \textbf{Quantum Lattice Gas Automaton (QLGA)} formalism \cite{meyer_quantum_1996}\footnote{The QLGA formalism provides a rigorous mathematical framework for unitary, local, discrete-time evolution on a lattice. Our discrete update rule is structurally equivalent to a QLGA on the $D_4$ geometry. Crucially, it is \emph{not} a Wilson-fermion discretization. Standard Wilson fermions suppress doublers by introducing an ad hoc dimension-5 operator ($a \nabla^2$), which strictly violates our Equipartition of Entropic Cost (\cref{subsec:mapping_rules}) by exceeding the node capacity limit ($\nu=16$). Instead, the $E_8$-Persistence theory lattice evades fermion doubling purely geometrically: the orthogonal projection strictly isolates the mirror chiralities into the static internal sector, requiring no continuum-limit cancellations.}, generalizing the Feynman Checkerboard model\cite{feynman_quantum_1965} to the $D_4$ geometry.
 
 \textbf{The Discrete Update.} The fermion state $\psi$ (a 16-component chiral spinor occupying the node capacity $\nu=16$) updates via a unitary operator combining two actions:
+
 \begin{enumerate}
-    \item \textit{Shift:} Information propagates to nearest neighbors with geometric admittance (hopping amplitude) $w$ at speed $c = \ell/\tau = 1$, mediated by internal spatial transition matrices $\Gamma^k$.
-    \item \textit{Mass:} A local rotation mixing chiral components with topological impedance (mass) $m$, mediated by the temporal projection matrix $\gamma^0$. (As we will rigorously prove in \cref{sec:capacity_mechanism}, this impedance $m$ cannot be a rigid bare constant due to orthogonal sub-lattices, but must dynamically emerge from the Governor field).
+    \item \textit{Shift:} Information propagates to nearest neighbors with geometric admittance (hopping amplitude) $w$ at speed $c = \ell/\tau = 1$, mediated by internal spatial transition matrices $\Gamma^k$. The unit vector $e_k$ defines the $k$-th spatial axis. The symmetric difference across these neighbors encodes the local directional gradient, which is scaled by $\Gamma^k$ and $w$, and phase-rotated by $-i$ to preserve unitarity.
+
+    \item \textit{Mass:} A local rotation mixing chiral components with topological impedance (mass) $m$, phase-rotated by $-i$, and governed by the temporal projection matrix $\gamma^0$ (the operator defining the temporal update of the local spinor state). (As we will rigorously prove in \cref{sec:capacity_mechanism}, this impedance $m$ cannot be a rigid bare constant due to orthogonal sub-lattices, but must dynamically emerge from the Governor field. We will also formally identify this geometric projection matrix $\gamma^0$ as identically the $\gamma^0$ of the continuum Dirac equation).
 \end{enumerate}
 
 The discrete evolution operator acts as:
@@ -35,7 +37,7 @@ The discrete evolution operator acts as:
 To recover the macroscopic field equation, we map this discrete update rule to its continuous Effective Field Theory (EFT) approximation. Subtracting $\psi(x,t)$ and dividing by $\tau$ expands the central difference quotients to first order:
 \begin{equation}
 \begin{aligned}
-    \frac{\psi(x,t+\tau) - \psi(x,t)}{\tau} \approx \\
+    \frac{\psi(x,t+\tau) - \psi(x,t)}{\tau} = \\
     -iw \sum_{k=1}^3 \Gamma^k \left( \frac{\psi(x+e_k\ell,t) - \psi(x-e_k\ell,t)}{2\ell} \right) &\frac{2\ell}{\tau} - i\gamma^0 m\psi(x,t)
 \end{aligned}
 \label{eq:diff_form}
@@ -59,12 +61,12 @@ The precise geometric nature and algebraic properties of the transition matrices
 
 To ensure isotropic propagation, the cross-terms of the discrete spatial transitions must identically vanish. The unique algebraic relation satisfying both the Unitarity constraint and the metric signature is the anti-commutation relation:
 \begin{equation}
-    \{\Gamma_\mu, \Gamma_\nu\} \equiv \Gamma_\mu\Gamma_\nu + \Gamma_\nu\Gamma_\mu = 2\eta_{\mu\nu}\mathbb{I}
+    \{\Gamma^\mu, \Gamma^\nu\} \equiv \Gamma^\mu\Gamma^\nu + \Gamma^\nu\Gamma^\mu = 2\eta_{\mu\nu}\mathbb{I}
 \label{eq:anti_commute}
 \end{equation}
-where $\eta_{\mu\nu} = \operatorname{diag}(-1,+1,+1,+1)$ is the emergent Lorentzian metric, geometrically enforcing $(\Gamma_0)^2 = -\mathbb{I}$ (temporal inversion) and $(\Gamma_k)^2 = +\mathbb{I}$ (spatial reflection) for spatial indices $k$.
+where $\eta_{\mu\nu} = \operatorname{diag}(-1,+1,+1,+1)$ is the emergent Lorentzian metric, geometrically enforcing $(\Gamma^0)^2 = -\mathbb{I}$ (temporal inversion) and $(\Gamma^k)^2 = +\mathbb{I}$ (spatial reflection) for spatial indices $k$.
 
-\textbf{Recognition:} This anti-commutation relation is not a postulated quantum mechanical spin algebra; it is the strict geometric requirement for preserving causal structure on the lattice. Because \cref{eq:anti_commute} is identically the defining algebra of the Dirac matrices, we explicitly identify the internal lattice transition matrices with the physical gamma matrices ($\Gamma^\mu \equiv \gamma^\mu$).
+\textbf{Recognition:} This anti-commutation relation is the strict geometric requirement for preserving causal structure on the lattice, not a postulated quantum mechanical spin algebra. Because \cref{eq:anti_commute} is identically the defining algebra of the Dirac matrices, we explicitly identify the internal lattice transition matrices with the physical gamma matrices ($\Gamma^\mu \equiv \gamma^\mu$). Furthermore, this unique algebraic relation preserves the Unitarity of the discrete shift operator while strictly suppressing lattice doublers through the geometric isolation of chiralities established in the substrate derivation\cite{meyer_informational_2026}.
 
 To recover the covariant Dirac equation, we multiply the continuum equation by $\gamma^0$ (utilizing the Lorentzian metric property $(\gamma^0)^2 = -1$), which perfectly recovers the covariant form:
 \begin{equation}
@@ -73,7 +75,7 @@ To recover the covariant Dirac equation, we multiply the continuum equation by $
 \end{equation}
 
 \subsection{The Chiral Filter: Geometric Origin of Parity Violation}
-Standard QFT inserts the chiral projection $P_L = \frac{1-\gamma^5}{2}$ by hand to match the observed maximal parity violation of the weak interaction. Here, this asymmetry is not postulated; it emerges structurally from the substrate geometry.
+Standard QFT inserts the chiral projection $P_L = \frac{1-\gamma^5}{2}$ by hand to match the observed maximal parity violation of the weak interaction. Here, this asymmetry emerges structurally from the substrate geometry.
 
 The \textbf{Map} pillar requires information to propagate on the causal (Lorentzian) manifold. The geometric projection $E_8 \to D_4 \oplus D_4$ splits the 16-component spinor into two orthogonal sectors. Because the Lorentzian signature assigns the active temporal generator ($\partial_t$) exclusively to the spacetime sector, the corresponding internal symmetry sector is strictly Euclidean. 
 
