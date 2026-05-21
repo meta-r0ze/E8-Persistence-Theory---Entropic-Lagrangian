@@ -1,7 +1,7 @@
 \section{Entropic Action}
 \label{sec:entropic_action}
 
-Any system that persists, whether a biological cell maintaining homeostasis, a business maintaining market position, or any physical structure sustaining its form against entropic decay, must minimize its rate of internal dissipation. In this section, we formalize this requirement as the Entropic Action and demonstrate that the Principle of Least Action emerges not as a fundamental axiom, but as its inevitable thermodynamic consequence.
+Any system that persists, whether a biological cell maintaining homeostasis, a business maintaining market position, or any physical structure sustaining its form against entropic decay, must minimize its rate of internal dissipation. In this section, we formalize this requirement as the Entropic Action and demonstrate that the Principle of Least Action emerges as its inevitable thermodynamic consequence.
 
 \subsection{The Thermodynamic Mechanism: Minimum Entropy Production}
 In standard equilibrium thermodynamics, a closed system strictly maximizes global entropy ($dS \ge 0$). However, the persistence of complex structure requires us to analyze systems in the non-equilibrium regime. Following Prigogine's formalization of non-equilibrium thermodynamics\cite{prigogine_introduction_1961}, the total change in entropy of a system can be partitioned into an external flux ($d_eS$) and internal entropy production ($d_iS \ge 0$), such that $dS = d_eS + d_iS$. 
@@ -52,7 +52,7 @@ Standard mechanics treats the Principle of Least Action as axiomatic: systems fo
     P(\text{survival} \mid \Gamma) \propto e^{-\beta S_\Phi[\Gamma]}
     \label{eq:survival_prob}
 \end{equation}
-This filtering requires no observer; it is the mechanical consequence of information loss, not a subjective selection. Here $\beta$ represents the substrate's inverse entropic tolerance, bounded by Shannon's Channel Capacity: $\beta \sim 1/C_{\text{channel}}$. For a specific substrate, $\beta$ is fully determined by the channel geometry. In discrete, resource-constrained systems (such as digital networks or cellular automata), this capacity is a structural invariant; in continuous media, it emerges from the noise spectral density.
+This filtering requires no observer; it is the mechanical consequence of information loss. Here $\beta$ represents the substrate's inverse entropic tolerance, bounded by Shannon's Channel Capacity: $\beta \sim 1/C_{\text{channel}}$. For a specific substrate, $\beta$ is fully determined by the channel geometry. In discrete, resource-constrained systems (such as digital networks or cellular automata), this capacity is a structural invariant; in continuous media, it emerges from the noise spectral density.
 
 \textbf{The Severity.} This filter is extraordinarily harsh. Let $\Gamma_{min}$ be the minimal-action trajectory and $\Gamma_{var}$ any variant path with a deviation $\delta S_\Phi > 0$. Over any observation window, the relative survival probability of the variant history compared to the optimal history is:
 \begin{equation}
@@ -66,4 +66,4 @@ Every path with $\delta S_\Phi \neq 0$ has already dissipated, its information s
 
 \textbf{The Illusion of Teleology.} This mechanism resolves a longstanding philosophical tension regarding ``agency'' and ``purpose'' in complex systems. Persistence requires no forward-looking intent; rather, non-minimizing trajectories undergo exponential suppression (\cref{eq:survival_prob}), leaving only the least-action remainder as observable history. What we observe as ``agency'' is simply the surviving remainder of thermodynamic elimination. 
 
-This provides a strictly mechanistic, structural resolution to the appearance of ``fine-tuning'' in complex systems. A system appears perfectly calibrated for persistence not because of observer-selection bias or forward-looking intent, but because the substrate itself acts as a continuous, exponential filter: all non-minimizing trajectories are continuously erased, leaving only optimal configurations available for observation.
+This provides a strictly mechanistic, structural resolution to the appearance of ``fine-tuning'' in complex systems. A system appears perfectly calibrated for persistence because the substrate itself acts as a continuous, exponential filter: all non-minimizing trajectories are continuously erased, leaving only optimal configurations available for observation.
