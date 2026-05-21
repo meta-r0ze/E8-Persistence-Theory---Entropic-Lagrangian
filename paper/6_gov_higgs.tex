@@ -1,18 +1,20 @@
 \section{The Governor (Higgs Potential)}
 \label{sec:governor}
 
+In a lattice gauge theory, the link variables ($U_\mu$) defined by the Protocol dictate the phase angles between nodes, but they do not define the \textit{scale} or ``stiffness'' of the node itself. As established in \cref{sec:map_capacity}, bridging the orthogonal internal and spacetime sectors strictly requires a mediating dynamic scalar field $\phi$, which allows Fermions to have mass. The Governor prevents a mass from violating the capacity bounds of a node.
+
 \textbf{The Architectural Requirement:}
 \begin{itemize}
-    \item \textbf{The Persistence Problem:} The substrate has a strictly finite local bit-depth ($\nu=16$). To exist as a persistent physical entity rather than a trivial void, the active capacity of the vacuum must be driven away from silence (Information Starvation), but it must be strictly halted before it overflows the node's hardware limits (Causal Aliasing).
-    \item \textbf{The Physics Result:} The Higgs Sector ($\mathcal{L} = -|D_\mu\phi|^2 - V(\phi)$). The covariant kinetic term geometrically couples the constraint to the network Protocol, and the scalar potential ($V(\phi) = -\mu^2|\phi|^2 + \lambda|\phi|^4$) is the mathematically unique boundary condition that bounds the finite state-space capacity.
+    \item \textbf{The Persistence Problem:} The active capacity of a node must remain in the interval (0, $\nu=16$]. To exist as a persistent physical entity rather than a trivial void, the vacuum must be driven away from silence (Information Starvation), but it must be strictly halted before it overflows the node's hardware limits (Causal Aliasing).
+    \item \textbf{The Physics Result:} We identify the Governor constraint with the Higgs Sector ($\mathcal{L} = -|D_\mu\phi|^2 - V(\phi)$). In this mapping, the covariant kinetic term serves to geometrically couple the constraint to the network Protocol, while the scalar potential ($V(\phi) = -\mu^2|\phi|^2 + \lambda|\phi|^4$) acts as the minimal boundary condition required to bound the finite state-space capacity.
 \end{itemize}
 
-The Governor is required to prevent the system from collapsing into an empty null state or diverging beyond its hardware limits. In a lattice gauge theory, the link variables ($U_\mu$) defined by the Protocol dictate the phase angles between nodes, but they do not define the \textit{scale} or ``stiffness'' of the node itself. As established in \cref{sec:map_capacity}, bridging the orthogonal internal and spacetime sectors strictly requires a mediating dynamic scalar variable. This Governor field $\phi(x)$ is therefore not an ad hoc invention; it is the necessary geometric representation of the \textbf{active occupancy} (the localized amplitude) of the lattice site $x$.
+The Governor is required to prevent the system from collapsing into an empty null state or diverging beyond its hardware limits. This Governor field $\phi(x)$ is therefore not an ad hoc invention; it is the necessary geometric representation of the \textbf{active occupancy} (the localized amplitude) of the lattice site $x$.
 
 The Entropic Action for this sector is derived from two competing information-theoretic imperatives: the need to maintain synchronized causal contact (the Kinetic term) and the need to remain within finite hardware capacity limits (the Potential term).
 
 \subsection{The Kinetic Governor: The Cost of Dynamic Constraint}
-In the Universal Architecture, the Governor is an active, dynamical field ($\phi$) mediating state across the lattice. Like any persistent structure, spatial or temporal variations in this field carry an entropic cost (a transition flux $f > 0$).
+The Governor is an active, dynamical field ($\phi$) mediating state across the lattice. Like any persistent structure, spatial or temporal variations in this field carry an entropic cost (a transition flux $f > 0$).
 
 Because the Governor acts as the bridge between orthogonal internal and spacetime sectors (as derived for the Capacity pillar in \cref{sec:map_capacity}), it is subject to the phase synchronization mandated by the Protocol. Therefore, any spatial gradient in the node's occupancy state cannot be evaluated as a bare derivative ($\partial_\mu \phi$); it must be evaluated relative to the local synchronized phase frame via the Covariant Derivative ($D_\mu = \partial_\mu - igA_\mu$). 
 
@@ -81,6 +83,6 @@ We identify the QFT ``Cutoff Scale'' ($\Lambda_{UV}$) not as a mathematical tric
 
 Furthermore, because the Higgs mass and the Planck mass scales emerge from the exact same discrete substrate geometry and integers, they are structurally locked: no independent continuous parameter exists to tune one relative to the other. The Higgs mass is inherently protected from unbounded radiative corrections because the substrate physically cannot resolve the infinite loop momenta assumed by continuum mathematics. There is no independent, continuous Planck scale to which the Higgs mass must be artificially tuned.
 
-The Hierarchy Problem is therefore \emph{structurally resolved in principle}: the discrete substrate forbids the infinite loop momenta that generate the fine-tuning problem.  
+Consequently, this architecture provides a natural structural mechanism that addresses the Hierarchy Problem: because the discrete substrate possesses a strict Shannon capacity limit, the infinite loop momenta that necessitate extreme fine-tuning are geometrically prohibited.
 
 While this establishes the \textit{structural form} of the physical UV cutoff and the necessity of the Higgs mass, the explicit calculation of the Higgs-to-Planck mass ratio $m_H/M_P$ and explicit verification that $m_H/M_P$ takes its observed value is deferred to the subsequent paper \textit{Informational Energetics: Nested Persistence}.
