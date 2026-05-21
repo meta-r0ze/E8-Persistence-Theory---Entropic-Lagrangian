@@ -11,7 +11,7 @@ The following criteria test distinct aspects of the framework. Criteria 1, 2, 4,
     \item \textbf{The Prohibition of Other Spins:} The substrate geometry strictly prohibits fundamental particles with $spin > 2$ (and fundamental half-integer $spin > 1/2$), providing a structural mechanism for the Weinberg-Witten theorem \cite{loebbert_weinberg-witten_2008}:
     \begin{itemize}
         \item \textbf{No Supersymmetry / Supergravity (Spin-3/2):} A fundamental spin-3/2 field (gravitino) requires a vector-spinor coupling. As established in the substrate projection, this cannot be constructed from the orthogonal $D_4 \oplus D_4$ decomposition without introducing geometrically suppressed mirror fermions. This structurally falsifies Supersymmetry as a fundamental property of the vacuum.
-        \item \textbf{No Spin $\ge$ 3:} A fundamental spin-3 field in 4D spacetime requires a totally symmetric rank-3 tensor. Off-shell, before classical trace constraints are applied, this unconstrained tensor possesses exactly 20 independent components. Because the fundamental chiral bit-depth of the lattice node is strictly limited to $\nu=16$, the substrate lacks the hardware channel capacity to encode the off-shell quantum fluctuations of a fundamental spin-3 state. Higher-spin extensions are therefore physically forbidden by Shannon capacity limits.
+        \item \textbf{No Spin $\ge$ 3:} A fundamental spin-3 field in 4D spacetime requires a totally symmetric rank-3 tensor. Off-shell, before classical trace constraints are applied, a symmetric tensor in 4D possesses exactly $\binom{4+3-1}{3} = 20$ independent components. Because the fundamental chiral bit-depth of the lattice node is strictly limited to $\nu=16$, the substrate lacks the hardware channel capacity to encode the off-shell quantum fluctuations of a fundamental spin-3 state. Higher-spin extensions are therefore physically forbidden by Shannon capacity limits.
     \end{itemize}
     
     \item \textbf{The Fourth Generation Prohibition:} A single Standard Model generation (including right-handed neutrinos) requires exactly 16 chiral Weyl fermions. The internal chiral channel capacity is exactly saturated by this payload ($\nu=16$). The replication of this structure into exactly 3 generations is geometrically fixed by the unique Triality of the internal $D_4$ sector (representing three distinct outer-automorphism framings of the same 16-channel hardware). The discovery of a 4th generation of fermions would require breaking this Triality or implying $\nu > 16$, either of which strictly falsifies the $E_8 \to D_4 \oplus D_4$ substrate hypothesis.
@@ -22,23 +22,3 @@ The following criteria test distinct aspects of the framework. Criteria 1, 2, 4,
 
     \item \textbf{Dynamical Dark Energy ($\Lambda$ Evolution):} The Margin pillar strictly defines the Cosmological Constant as a static, non-derivative geometric baseline cost required to resolve the spatial manifold. Any confirmed cosmological detection of an equation of state parameter $w \neq -1$, or a dynamically evolving dark energy component ($w_a \neq 0$), would falsify the identification of $\Lambda$ as the static Margin cost.
 \end{enumerate}
-
-\subsection{Quantum Hardware Limit: The \texorpdfstring{$\sigma=5$}{sigma=5} Multi-Partite Coherence Cliff}
-
-Treating quantum states as geometric projections yields a highly specific, falsifiable constraint on quantum computing hardware. The interaction rank $\sigma=5$ represents the maximum number of independent, orthogonal interaction dimensions available to a single lattice node. 
-
-This imposes a strict \textbf{Topological Capacity Limit} on multi-partite entanglement when configured in a \textbf{star topology} (a central hub qubit natively entangled to peripheral leaf qubits). The total available interaction aperture for a single node is $(\sigma+1)=6$, representing the central bus node plus 5 peripheral connections.
-
-\subsubsection{The Falsification Test}
-
-Because low-degree superconducting architectures (such as the heavy-hexagon lattice, max degree 3) distribute the topological load across the manifold, they successfully sustain large-scale entanglement (e.g., 27-qubit GHZ states \cite{mooney_generation_2021}) without exceeding local capacity bounds. 
-
-However, hardware with native all-to-all connectivity (such as trapped-ion or neutral-atom platforms) permits the creation of high-degree star graphs. We predict a strict "Coherence Cliff" for GHZ states prepared via a single central hub on these platforms.
-
-\begin{itemize}
-    \item \textbf{The Coherence Boundary ($N \leq 5$ leaves):} The internal symmetry manifold possesses sufficient degrees of freedom to embed the state at the hub node. Decoherence is driven by standard thermal noise and follows smooth exponential decay.
-    
-    \item \textbf{Topological Aliasing ($N \ge 6$ leaves):} A 7-qubit star (1 hub + 6 leaves) requires 7 independent internal coordinates at the hub node. Because the aperture is strictly limited to 6, the 7th connection is geometrically forced to share an internal coordinate with an existing node. 
-\end{itemize}
-
-\textbf{Falsification Criterion:} We predict that at exactly 6 peripheral leaves ($N=6$ from a single hub), the hardware will experience a discontinuous fidelity drop that \textbf{cannot be mitigated} by environmental cooling, dynamical decoupling, or standard gate-error correction. If observed, this provides direct empirical evidence of the vacuum's finite interaction rank ($\sigma=5$). Conversely, if a native 7-qubit star state is maintained with high fidelity comparable to the $N=5$ state, this topological capacity limit is falsified.
