@@ -35,41 +35,17 @@ Next, we unpack the Entropic Lagrangian density as the linear sum of independent
 \end{itemize}
 
 \subsubsection{The Observational Filter}
+\label{subsec:observational_filter}
 The survivorship filter derived in \cref{sec:least_action} ($P \propto e^{-\beta S_\Phi}$) has a direct mathematical manifestation in Quantum Field Theory: the \textbf{Euclidean Path Integral}. In standard QFT, the Euclidean Path Integral is obtained via a Wick Rotation to imaginary time, transforming abstract quantum phase interference ($e^{iS}$) into a statistical thermodynamic partition function ($e^{-S_E}$). In the $E_8$-Persistence theory, this thermodynamic partition function describes the physical reality of the survivorship filter. Non-optimal paths are physically eliminated by exponential thermodynamic decay. The path integral is identically the statistical mechanics of substrate survival.
 
 This mapping reveals that the ``Quantum Potential'' ($Q$) found in stochastic mechanics is the structural \textbf{Toll} required to maintain informational localization (\textbf{Margin}) against the substrate's noise floor. Reality appears ``Quantum'' because the system must pay a continuous entropic tax to prevent localized information from diffusing into the vacuum.
 
-\subsection{Recovery of Quantum Mechanics Fundamentals: Non-Locality and Interference}
-\label{sec:quantum_fundamentals}
-
-Reinterpreting the path integral as a thermodynamic survivorship filter provides a mechanistic origin for macroscopic least-action trajectories. However, this raises an immediate question regarding foundational quantum phenomena: how do superposition, wave-particle duality, and non-local entanglement (e.g., Bell's theorem violations) manifest if non-optimal histories undergo thermodynamic decay? 
-
-Within the $E_8$-Persistence framework, these "quantum" behaviors are identified as the necessary projection artifacts of mapping an 8-dimensional discrete network onto a 4-dimensional continuous spacetime.
-
-\subsubsection{The Geometric Origin of Entanglement (Bell's Theorem)}
-
-\textit{Scope of Application:} While a rigorous mathematical formalization of quantum measurement and state projection substrate is the subject of future work, we briefly outline how this geometric survivorship filter conceptually accommodates these foundational phenomena. By mapping these behaviors to projection artifacts, the framework provides a structural rationale for quantum mechanics without requiring hidden variables or retrocausality.
-
-In standard quantum mechanics, entanglement represents a non-local correlation across spacetime. In the $E_8$-Persistence theory, entanglement is modeled as \textbf{unprojected adjacency} within the 8D substrate. 
-
-While two entangled particles may be kinematically distant in the observable $D=4$ spacetime manifold, they remain geometrically adjacent within the orthogonal internal symmetry sector of the bulk lattice. Because information propagates at a maximum rate of $c_{\text{eff}} = 1$, non-locality is structurally prohibited \textit{within the projected manifold}. However, Bell's inequalities are violated because the correlation is maintained in the 8D substrate prior to the 4D projection, circumventing the geometric ``speed of light'' constraint of the emergent spacetime entirely. 
-
-Measurement is identified as the act of \textbf{Address Resolution}: an interaction that forces the shared internal state to independently project onto localized, decohered spacetime coordinates.
-
-\subsubsection{The Double-Slit and Delayed-Choice as Projection Artifacts}
-
-This substrate mechanism provides a structural analog for wave-particle duality. A particle passing through a double-slit apparatus occupies a \textbf{single subspace address} with geometric support over multiple trajectories in the internal $D_4$ sector. The ``wave'' is the \textbf{phase structure of the unprojected internal address}.
-
-\begin{itemize}
-    \item \textbf{Which-Path Detection (Address Resolution):} Placing a detector at one slit forces the system to consume channel capacity ($\nu = 16$) to resolve the subspace address at the slit location, rather than at the screen. This forces a projection basis that eliminates the phase coherence required for interference by preempting the projection.
-    
-    \item \textbf{Delayed-Choice Quantum Erasure:} This framework requires no retrocausality. The ``delayed choice'' simply determines \textit{which basis the final projection uses}. If the which-path information is preserved, the system projects onto internal sector eigenstates (Slit A vs. Slit B), yielding no interference. If the information is ``erased,'' the system projects onto the superposition basis (A+B), restoring interference. The erasure is a reorientation of the projection operator.
-\end{itemize}
+Reinterpreting the path integral as a thermodynamic survivorship filter provides a mechanistic origin for macroscopic least-action trajectories. This raises an immediate question: if non-optimal histories are exponentially suppressed, how do quantum superposition, wave-particle duality, and non-local entanglement arise? The substrate's discrete $8D$ structure constrains the geometric origin of these phenomena as projection artifacts; details are provided in \cref{app:quantum_fundamentals}.
 
 \subsection{The Additive Structure}
 \label{subsec:additive_structure}
 
-The six IE pillars constitute a necessary and sufficient framework for stable control. While these functional components must coordinate dynamically to maintain systemic persistence, we define their fundamental thermodynamic costs as an \textbf{Entropic Balance Sheet}. The total Lagrangian is defined as strictly additive, where each term is constructed so as to respect the geometric constraints established by the others:
+The six IE pillars constitute a necessary and sufficient framework for stable control. While these functional components must coordinate dynamically to maintain systemic persistence, we define their fundamental thermodynamic costs as an \textbf{Entropic Balance Sheet}. The total Entropic Lagrangian is strictly additive; each term respects the orthogonal geometric constraints of the others:
 
 \begin{equation}
     \mathcal{L}_{\Phi} = \mathcal{L}_{\mathrm{CAP}} + \mathcal{L}_{\mathrm{MAP}} + \mathcal{L}_{\mathrm{PRO}} 
@@ -96,16 +72,34 @@ For the Entropic Lagrangian $\mathcal{L}_{\Phi}$ to describe a persistent system
 
 Therefore, the kinetic terms are the \textbf{Penalty Functions} applied by the system to suppress causal violations. Lorentz invariance and the constancy of the speed of light are the inevitable consequence of information propagating at the bandwidth limit of a discrete substrate.
 
+\subsection{The Illusion of the Rest Frame: Emergent Lorentz Invariance}
+
+A persistent critique of discrete lattice models is that a fixed spatial grid implies a preferred ``rest frame,'' seemingly violating the relativity of simultaneity established by Lorentz invariance. In the $E_8$-Persistence framework, continuous Lorentz invariance is recovered not as a fundamental geometric absolute, but as the exact macroscopic hydrodynamic limit of the substrate's informational bandwidth.
+
+On the discrete lattice, the speed of light is not a velocity through space, but the fundamental update rate of the network: $c \equiv \ell/\tau = 1$ node per clock cycle. Because the observer (a macroscopic persistence structure) and the observed (the signal) are both excitations operating on the exact same discrete hardware, their interaction is strictly bounded by this universal clock rate. 
+
+\begin{itemize}
+    \item \textbf{The Invariance of Capacity:} When a macroscopic observer accelerates relative to the lattice bulk, they are consuming a larger fraction of their local node capacity ($\nu=16$) simply to process their own spatial translation. Consequently, their internal clock rate (the available capacity for internal state updates) slows down proportionally. This structural bottleneck perfectly replicates Time Dilation ($\Delta t' = \gamma \Delta t$).
+    \item \textbf{Length Contraction as Resolution Loss:} As an observer's kinetic footprint increases, the spatial resolution available to encode their structure along the axis of motion decreases due to the Shannon sampling limit. This physical truncation of structural data perfectly replicates Length Contraction ($L' = L/\gamma$).
+\end{itemize}
+
+Therefore, Lorentz invariance is not broken by the lattice; it is the \textbf{necessary informational scaling law} of the lattice. It is the geometric consequence of observers possessing finite processing capacity: no observer, regardless of their state of motion, can measure an information transfer rate exceeding the fundamental hardware step of the substrate. Lorentz symmetry is exact in the macroscopic limit ($\lambda \gg \ell$), safely breaking only at the Planck scale where continuous spacetime resolves back into discrete node addresses.
+
 \subsection{The Thermodynamic Bound: Finite Capacity and the Dimensional Budget}
 \label{subsec:mapping_rules}
 
 With the kinematic bandwidth established ($c=1$), we must determine how the substrate's finite capacity constrains the structure of allowed operators. Standard QFT enforces renormalizability ($d \le 4$) to prevent mathematical divergences at high energies. In the \textit{$E_8$-Persistence} theory, this mathematical requirement is the exact macroscopic reflection of a strict geometric and thermodynamic constraint: the finite capacity of the substrate.
 
-\textbf{The Geometric Primitives:} Before calculating costs, we define the physical objects being processed. The $E_8$ discrete substrate comprises two irreducible geometric primitives:
+\textbf{The Geometric Primitives:} 
+
+The dimensional budget is a geometric accounting of the substrate's hardware. The $E_8 \to D_4 \oplus D_4$ projection yields two irreducible geometric primitives whose dimensional costs are fixed by their embedding requirements:
+
 \begin{itemize}
-    \item \textit{Nodes (0-forms):} Discrete lattice sites storing localized state information (Capacity). They map directly to physical fermions.
-    \item \textit{Links (1-forms):} Connections between adjacent nodes mediating information transfer (Protocol). They map directly to physical bosons.
+    \item \textit{Nodes (0-forms):} A localized topological defect requires a 3-dimensional spatial footprint to embed an $S^2$ boundary ($\chi=2$). They map directly to physical fermions.
+    
+    \item \textit{Links (1-forms):} Connective channels mediate information transfer along a single lattice edge between adjacent nodes. Their base spatial extent is 1-dimensional. They map directly to physical bosons.
 \end{itemize}
+
 
 \textbf{The Dimensional Budget.} In natural units ($\hbar = c = 1$), the Entropic Action $S_\Phi$ is a strictly dimensionless count of state transitions. Because information is physical and encoded on a substrate where space ($\ell$) and time ($\tau$) are discrete hardware counts, the Entropic Action $S_\Phi$ evaluating total state transitions is strictly a dimensionless integer. In standard natural units ($\hbar = c = 1$), mapping this discrete counting measure to a continuous spacetime integral ($\int d^4x$, which carries a geometric mass dimension of $-4$) strictly requires the Lagrangian density $\mathcal{L}_\Phi$ to possess a compensating mass dimension of exactly $+4$.
 
@@ -116,7 +110,8 @@ This geometric accounting alone, however, permits standard Effective Field Theor
 Because the total dissipation $\mathcal{D} = \xi \cdot \mathbf{K} \cdot f$ is multiplicative and $\xi$ is dimensionless, the mass dimensions algebraically must sum to exactly 4: $[\mathbf{K}] + [f] = 4$. We term this the \emph{Equipartition of Entropic Cost}: the strict thermodynamic tradeoff requiring that geometric primitives with larger structural memory footprints must operate with correspondingly lower kinematic derivatives. By tallying the intrinsic dimensional costs of the lattice geometry, this single rule rigorously derives the fundamental derivative structures of QFT:
 
 \begin{itemize}
-    \item \textbf{Nodes (Fermions/Spinors):} A persistent node represents a localized topological defect. To exist as a distinct, bounded entity, this defect must occupy a 3-dimensional spatial footprint ($D_{space} = 3$, derived in companion work). Therefore, the structural complexity $\mathbf{K}$ measures the local information density (the probability density $\bar{\psi}\psi$, not the bare amplitude $\psi$). This inherently consumes \textbf{3 units} of the dimensional budget ($3/2 + 3/2 = 3$). To sum to a total drag of exactly 4, the kinematic flux $f$ is mathematically restricted to exactly \textbf{1 unit} ($3+1=4$). Therefore, the kinematic propagation of a node maps uniquely to a \textbf{first-order} derivative. (The formal geometric proof of this kinematic restriction is explicitly derived as the Dirac equation in \cref{sec:map_capacity}).
+    \item \textbf{Nodes (Fermions/Spinors):} 
+    To exist as a distinct, bounded entity, this defect must occupy a 3-dimensional spatial footprint ($D_{space} = 3$). Consequently, its structural complexity $\mathbf{K}$ (representing the local probability density $\bar{\psi}\psi$) scales geometrically as an inverse spatial volume ($L^{-3}$). In the natural units of the dimensional budget, this geometric footprint inherently consumes exactly 3 units of mass dimension (apportioned symmetrically as $3/2 + 3/2 = 3$ for the spinor and its conjugate). To sum to a total drag of exactly 4, the kinematic flux $f$ is mathematically restricted to exactly \textbf{1 unit} ($3+1=4$). Therefore, the kinematic propagation of a node maps uniquely to a \textbf{first-order} derivative. (The formal geometric proof of this kinematic restriction is explicitly derived as the Dirac equation in \cref{sec:map_capacity}).
 
     \item \textbf{Links (Bosons/Scalars):} Connective links (1-forms) mediate interactions across the $D=4$ manifold, hosting both gauge fields (the Protocol, $A_\mu$) and mediating scalar fields (such as the Governor, $\phi$). Their base spatial footprint is 1 (mass dimension 1). To ensure lossless transmission and phase-invariance, the local structural complexity ($\mathbf{K}$) must be a real scalar constructed from equal powers of the field and its conjugate. The only mathematically admissible invariants are quadratic (e.g., $|A|^2$, $|\phi|^2$) or quartic (e.g., $|A|^4$, $|\phi|^4$) (higher powers immediately exceed the budget). 
     
