@@ -10,11 +10,31 @@ the \textbf{Entropic Lagrangian}: the unique functional form encompassing the St
 To apply the universal Entropic Action to fundamental physics, we must translate the general systems-theory variables into the specific geometric language of Quantum Field Theory. We do this in three distinct steps: defining the global integral, unpacking the local density, and establishing the observational filter.
 
 \subsubsection{The Covariant Action}
-We first map the macro-components of the Entropic Action ($S_\Phi = \int \mathcal{D} \, d\mu$) to the physical substrate:
+We map the Entropic Action's construction
+(\cref{eq:impedance_density,eq:entropic_action} of the companion
+paper\cite{meyer_informational_2026}) to the physical substrate in two
+steps, mirroring its own derivation: a spatial integral collapsing
+local dissipation into a global density at each instant, then a
+temporal integral accumulating that density over the system's history.
 
 \begin{itemize}
-    \item \textbf{The Measure ($d\mu \to d^4x\sqrt{-g}$):} For the discrete $E_8$ lattice projected onto a causal $D = 4$ spacetime, the fundamental counting measure specializes to the four-dimensional volume element ($d^4x$, mass dimension $-4$). Because the Toll pillar requires dynamic geometric strain to conserve capacity (\cref{sec:toll_margin}), the measure must include the invariant volume factor $\sqrt{-g}$ (dimensionless, as it is the ratio of physical to coordinate volume).
-    \item \textbf{The Integrand ($\mathcal{D} \to \mathcal{L}_\Phi$):} The instantaneous dissipation density $\mathcal{D}$ maps exactly to the \textbf{Entropic Lagrangian Density} $\mathcal{L}_\Phi$. This rename asserts that the physical Lagrangian is fundamentally a measure of thermodynamic drag.
+    \item \textbf{The Local Density ($\mathcal{D} \to \mathcal{L}_\Phi$):}
+    The instantaneous dissipation density $\mathcal{D}$ maps to the
+    \textbf{Entropic Lagrangian Density} $\mathcal{L}_\Phi$: both are
+    local, multiplicative quantities defined pointwise on the
+    substrate. This rename asserts that the physical Lagrangian is
+    fundamentally a measure of thermodynamic drag at a point, not yet
+    summed across the system.
+
+    \item \textbf{The Measure ($d\mu \to d^4x\sqrt{-g}$):} For the
+    discrete $E_8$ lattice projected onto a causal $D=4$ spacetime,
+    the companion paper's counting measure $d\mu$ -- itself a stand-in
+    for the spatial-then-temporal integration that builds $S_\Phi$ from
+    $\mathcal{D}$ -- specializes to the four-dimensional volume element
+    ($d^4x$, mass dimension $-4$). Because the Toll pillar requires
+    dynamic geometric strain to conserve capacity (\cref{sec:toll_margin}),
+    the measure must include the invariant volume factor $\sqrt{-g}$
+    (dimensionless, the ratio of physical to coordinate volume).
 \end{itemize}
 
 Applying these translations yields the covariant physical action:
@@ -45,14 +65,18 @@ Reinterpreting the path integral as a thermodynamic survivorship filter provides
 \subsection{The Additive Structure}
 \label{subsec:additive_structure}
 
-The six IE pillars constitute a necessary and sufficient framework for stable control. While these functional components must coordinate dynamically to maintain systemic persistence, we define their fundamental thermodynamic costs as an \textbf{Entropic Balance Sheet}. The total Entropic Lagrangian is strictly additive; each term respects the orthogonal geometric constraints of the others:
-
+The six IE pillars constitute a necessary and sufficient framework for persistence. While these functional components must coordinate dynamically to maintain systemic persistence, we define their
+fundamental thermodynamic costs as an \textbf{Entropic Balance Sheet}. This is the physical instantiation of the companion paper's Net Entropic Impedance $Z_{\mathrm{IE}}$: decomposing the local,
+multiplicative Lagrangian density $\mathcal{L}_\Phi$ by pillar recovers the same additive structure across geometrically orthogonal subspaces. The total Entropic Lagrangian is strictly additive when summed this way; each term respects the orthogonal geometric constraints of the others:
 \begin{equation}
     \mathcal{L}_{\Phi} = \mathcal{L}_{\mathrm{CAP}} + \mathcal{L}_{\mathrm{MAP}} + \mathcal{L}_{\mathrm{PRO}} 
     + \mathcal{L}_{\mathrm{GOV}} + \mathcal{L}_{\mathrm{TOL}} + \mathcal{L}_{\mathrm{MAR}}
 \end{equation}
 
 Each term tracks one pillar's irreducible thermodynamic cost. The $E_8 \to D_4 \oplus D_4$ decomposition provides the geometric foundation for this separation \cite{meyer_informational_2026}. Because the six pillars operate on geometrically orthogonal subspaces of the $D_4 \oplus D_4$ decomposition (metric volume, topological boundary, internal phase, and spacetime coordinates are mutually independent), dependencies between pillar costs are minimal, as the following sections will show.
+
+Each term $\mathcal{L}_i$ represents the local dissipation density required to maintain that pillar. 
+While Protocol and Governor reduce the \emph{net} dissipation of the organized system relative to decoherence or divergence, their local Lagrangian densities are strictly positive costs; the net savings appear only when comparing the full six-pillar action against the uncoordinated baseline.
 
 \subsection{The Kinematic Bound: Lorentz Invariance as Bandwidth}
 \label{subsec:kinetic_constraint}
@@ -95,9 +119,9 @@ With the kinematic bandwidth established ($c=1$), we must determine how the subs
 The dimensional budget is a geometric accounting of the substrate's hardware. The $E_8 \to D_4 \oplus D_4$ projection yields two irreducible geometric primitives whose dimensional costs are fixed by their embedding requirements:
 
 \begin{itemize}
-    \item \textit{Nodes (0-forms):} A localized topological defect requires a 3-dimensional spatial footprint to embed an $S^2$ boundary ($\chi=2$). They map directly to physical fermions.
+    \item \textit{Nodes (0-forms):} A localized topological defect requires a 3-dimensional spatial footprint to embed an $S^2$ boundary ($\chi=2$).
     
-    \item \textit{Links (1-forms):} Connective channels mediate information transfer along a single lattice edge between adjacent nodes. Their base spatial extent is 1-dimensional. They map directly to physical bosons.
+    \item \textit{Links (1-forms):} Connective channels mediate information transfer along a single lattice edge between adjacent nodes. Their base spatial extent is 1-dimensional.
 \end{itemize}
 
 
@@ -110,17 +134,17 @@ This geometric accounting alone, however, permits standard Effective Field Theor
 Because the total dissipation $\mathcal{D} = \xi \cdot \mathbf{K} \cdot f$ is multiplicative and $\xi$ is dimensionless, the mass dimensions algebraically must sum to exactly 4: $[\mathbf{K}] + [f] = 4$. We term this the \emph{Equipartition of Entropic Cost}: the strict thermodynamic tradeoff requiring that geometric primitives with larger structural memory footprints must operate with correspondingly lower kinematic derivatives. By tallying the intrinsic dimensional costs of the lattice geometry, this single rule rigorously derives the fundamental derivative structures of QFT:
 
 \begin{itemize}
-    \item \textbf{Nodes (Fermions/Spinors):} 
+    \item \textbf{Nodes:} 
     To exist as a distinct, bounded entity, this defect must occupy a 3-dimensional spatial footprint ($D_{space} = 3$). Consequently, its structural complexity $\mathbf{K}$ (representing the local probability density $\bar{\psi}\psi$) scales geometrically as an inverse spatial volume ($L^{-3}$). In the natural units of the dimensional budget, this geometric footprint inherently consumes exactly 3 units of mass dimension (apportioned symmetrically as $3/2 + 3/2 = 3$ for the spinor and its conjugate). To sum to a total drag of exactly 4, the kinematic flux $f$ is mathematically restricted to exactly \textbf{1 unit} ($3+1=4$). Therefore, the kinematic propagation of a node maps uniquely to a \textbf{first-order} derivative. (The formal geometric proof of this kinematic restriction is explicitly derived as the Dirac equation in \cref{sec:map_capacity}).
 
-    \item \textbf{Links (Bosons/Scalars):} Connective links (1-forms) mediate interactions across the $D=4$ manifold, hosting both gauge fields (the Protocol, $A_\mu$) and mediating scalar fields (such as the Governor, $\phi$). Their base spatial footprint is 1 (mass dimension 1). To ensure lossless transmission and phase-invariance, the local structural complexity ($\mathbf{K}$) must be a real scalar constructed from equal powers of the field and its conjugate. The only mathematically admissible invariants are quadratic (e.g., $|A|^2$, $|\phi|^2$) or quartic (e.g., $|A|^4$, $|\phi|^4$) (higher powers immediately exceed the budget). 
+    \item \textbf{Links:} Connective links (1-forms) mediate interactions across the $D=4$ manifold, hosting both gauge fields (the Protocol, $A_\mu$) and mediating scalar fields (such as the Governor, $\phi$). Their base spatial footprint is 1 (mass dimension 1). To ensure lossless transmission and phase-invariance, the local structural complexity ($\mathbf{K}$) must be a real scalar constructed from equal powers of the field and its conjugate. The only mathematically admissible invariants are quadratic (e.g., $|A|^2$, $|\phi|^2$) or quartic (e.g., $|A|^4$, $|\phi|^4$) (higher powers immediately exceed the budget). 
     
     If the system utilized a quartic invariant ($|\phi|^4$) for propagation, it would consume the entire dimensional budget of exactly 4, leaving 0 units for the transition flux ($f$). This would result in a static field unable to update or propagate information. Because a connective link must mediate active transitions ($f > 0$), any propagating bosonic field is uniquely restricted to the quadratic invariant ($|\phi|^2$), which intrinsically consumes \textbf{2 units} of the dimensional budget. To sum to exactly 4, the kinematic flux $f$ must provide the remaining \textbf{2 units} ($2+2=4$). Therefore, information synchronization across geometric loops maps uniquely to \textbf{squared first-order derivatives} for both gauge and scalar fields.
 
     \label{subsec:restmass}
     \item \textbf{Rest Mass and Potentials:} When a field is at rest (relative spatial gradients vanish), it must still satisfy the dimensional budget of 4 to persist across the lattice's continuous temporal updates. To exhaust the budget without using spatial derivatives, the substrate must provide structural mass impedance to balance the equation.
     
-    For dimension-3 nodes (fermions), reaching a total dimension of 4 requires coupling to exactly one dimension-1 parameter ($m$). For a dimension-1 scalar field ($\phi$), exhausting the budget of 4 without using kinematic derivatives strictly limits the allowed structures to exactly two forms: a quadratic term coupled to a dimension-2 parameter ($\mu^2|\phi|^2$), and a quartic self-interaction ($\lambda|\phi|^4$).
+    For dimension-3 nodes, reaching a total dimension of 4 requires coupling to exactly one dimension-1 parameter ($m$). For a dimension-1 scalar field ($\phi$), exhausting the budget of 4 without using kinematic derivatives strictly limits the allowed structures to exactly two forms: a quadratic term coupled to a dimension-2 parameter ($\mu^2|\phi|^2$), and a quartic self-interaction ($\lambda|\phi|^4$).
 \end{itemize}
 
 \subsection{The Completed Entropic Balance Sheet}

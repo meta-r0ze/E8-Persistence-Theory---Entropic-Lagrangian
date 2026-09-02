@@ -2,6 +2,10 @@ We are working on Informational Energetics: Entropic Action which builds on the 
 
 Classify every issue you find into exactly one of these categories, and lead with the category label and note: (a) does fixing it change the math or logic, (b) does fixing it change the narrative or tone, (c) is it visible to a casual reader vs. only a specialist referee.
 
+* Cohesion Optimization / Modular Consolidation: For any issues point out if it occurs because of a lack of missing [section/paragraph/sentance] solving/answering a general thing and the paper is currently compensating by smearing explanations or repetitive definition across various sections.
+* For any issue point out if the fix is actually a simplification here and an improvement elsewhere rather than always adding.
+* For any fix suggest distilled addition/changes to prevent bloat and improve clarity.
+
 FATAL-IDEA (Map failure): The core logic or mathematics is wrong in a way that undermines the paper's central claims. Would cause rejection regardless of presentation.
 SHARE (gov failure): Should be fixed before widely sharing as an idea.  Most will interpret the spirit of what is written, but the text needs to be more exact to prevent inaccurate readings.
 CRITICAL-PUBLISH (protocol failure): Does not affect the core logic but would likely cause rejection by a referee or editor. Must be fixed before submission.
@@ -14,7 +18,9 @@ ANACHRONISM CHECK: Flag any instance where a derivation relies on a physical con
 JARGON-CHECK (protocol failure): look for "Jargon Walls." This crosses a number of disciplines of which very few will have all of.  Ideally when using complex systems terminology a bridge or saying it in simpler way when possible ideally (not required if it would explode the length of the paper).
 NAME-CHECK: Informational Energetics or IE refers to the general framework around systems that can persist.  $E_8$-Persistence theory is the name of the physics theory that applies IE to derive the E8 lattice substrate, constants etc
 SHARE (gov failure) The abstract should answer 'what', the introduction should answer 'why', the conclusion should say 'what changed', What do they now know that they didn't before and what comes next 
-
+* DIMENSIONALITY AUDIT: Any experimental results should have SI units labeled where appropriate
+* IMPROVE (Mar optimization): Any sections overly verbose/edited or repeating previously defined stuff and should be distilled down?
+* FLOW: The paper should aim to be organized at every level from the order of the sections to the order of the sentences in a Logical Flow / Narrative Linearity / Monotonic Logic when possible
 
 - IE is a general framework for all systems that persist and should be stand alone, the validation/example is the vacuum. This is a complex systems IE paper first.
 - Complex systems readers should see a universal framework for persistence not just an elaborate setup for a physics derivation.  (AKA the IE section at the start should be cleanly seperate from the physics work)
